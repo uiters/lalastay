@@ -15,7 +15,15 @@ function VideoIntro() {
     // event.target.playVideo();
   };
   return (
-    <div style={{ marginBottom: '40px', height: '500px', position: 'relative' }}>
+    <div
+      style={{
+        marginBottom: '40px',
+        height: '500px',
+        position: 'relative',
+        marginRight: '-100px',
+        marginLeft: '-100px',
+      }}
+    >
       <YouTube videoId="NVk6tRk89xw" opts={opts} onReady={_onReady} />
       <div
         style={{

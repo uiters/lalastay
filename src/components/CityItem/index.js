@@ -14,7 +14,6 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
     color: '#FAFAFA',
     fontSize: '20px',
-    fontWeight: 600,
   },
 }));
 
@@ -34,8 +33,10 @@ function CityItem() {
         src={city}
       />
       <div className={classes.content}>
-        <Box textAlign="center">Đồng nai</Box>
-        <Box textAlign="center">3550 chỗ ở</Box>
+        <Box textAlign="center" fontWeight={600}>
+          Đồng nai
+        </Box>
+        <Box textAlign="center">410k/1 phòng</Box>
       </div>
     </div>
   );
