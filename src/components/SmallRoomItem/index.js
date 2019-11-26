@@ -169,7 +169,7 @@ function SmallRoomItem(props) {
           </div>
         </Swiper>
       </div>
-      <div style={{ marginTop: '10px', padding: '0 10px' }}>
+      <div style={{ padding: '0 5px' }}>
         <Grid container direction="row" justify="space-between" alignItems="center">
           <Box className="price" fontSize={18}>
             <Box display="inline" color="#9708CC">
@@ -178,19 +178,21 @@ function SmallRoomItem(props) {
             1.5tr/đêm
           </Box>
           <Box style={{ fontSize: '14px' }}>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               <StarIcon style={{ color: '#9708CC', fontSize: '18px' }} />
-              <p>4.95</p>
+              <div>4.95</div>
             </div>
           </Box>
         </Grid>
         <div style={{ display: 'flex', fontSize: '14px' }}>
           <PersonIcon style={{ color: '#9708CC', fontSize: '20px' }} />
-          <Box>3 người - 1 phòng - 1 dòng</Box>
+          <Box>3 người - 1 phòng</Box>
         </div>
         <Box fontWeight="fontWeightBold" fontSize={18} style={{ lineHeight: '25px' }}>
           <Link to="/" style={{ color: 'rgba(43, 43, 43, 0.8)' }}>
-            PVL service apartment near Thảo Điền - Sunshine With Bacony - 301
+            <div className="showMore">
+              PVL service apartment near Thảo Điền - Sunshine With Bacony - 301
+            </div>
           </Link>
         </Box>
       </div>

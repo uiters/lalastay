@@ -3,18 +3,18 @@
   background-color: #fc6c85;
   color: #ffffff;
   border: none !important;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 23px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-border-radius: 2px;
+  border-radius: 2px;
 }
-.name-home{
+.name-home {
   font-weight: 600;
-font-size: 24px;
-line-height: 33px;
-color: #2B2B2B;
+  font-size: 24px;
+  line-height: 33px;
+  color: #2b2b2b;
 }
-.convenient-img{
+.convenient-img {
   width: 100px;
   height: 100px;
 }
@@ -39,4 +39,15 @@ color: #2B2B2B;
 .button-search-container {
   width: 10%;
   height: 40px;
+}
+
+.compare-button {
+  background-color: #fc6c85;
+  color: #ffffff;
+  border: none !important;
+  font-size: 18px;
+  width: 99%;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }

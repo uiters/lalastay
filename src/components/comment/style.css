@@ -1,0 +1,17 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.comment-content {
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 40px;
+  width: 80%;
+}
+
+.comment {
+  border: none !important;
+}
