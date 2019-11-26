@@ -1,6 +1,15 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import { Login, Home, Repos, RepoDetail, NotFound, Homedetail, HomeByArea } from 'routes';
+import {
+  Login,
+  Home,
+  Repos,
+  RepoDetail,
+  NotFound,
+  Homedetail,
+  HomeByArea,
+  CompareHomestaty,
+} from 'routes';
 import { Navbar } from 'components';
 
 function RouterConfig() {
@@ -14,6 +23,7 @@ function RouterConfig() {
         <RepoDetail path="repo/:name" />
         <Homedetail path="home-detail" />
         <HomeByArea path="home-by-area" />
+        <CompareHomestaty path="compare-homestay" />
         <NotFound default />
       </Router>
     </>

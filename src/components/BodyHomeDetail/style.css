@@ -6,15 +6,15 @@
   font-size: 20px;
   line-height: 23px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-border-radius: 2px;
+  border-radius: 2px;
 }
-.name-home{
+.name-home {
   font-weight: 600;
-font-size: 24px;
-line-height: 33px;
-color: #2B2B2B;
+  font-size: 24px;
+  line-height: 33px;
+  color: #2b2b2b;
 }
-.convenient-img{
+.convenient-img {
   width: 100px;
   height: 100px;
 }

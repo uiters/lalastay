@@ -129,7 +129,6 @@
 }
 
 .province {
-
   background-color: #9708cc;
   border-radius: 10px;
   padding: 3px 6px;
@@ -152,5 +151,5 @@
   top: 5px;
   left: 5px;
   z-index: 200;
-  display: flex
+  display: flex;
 }
