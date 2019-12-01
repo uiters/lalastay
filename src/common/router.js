@@ -16,7 +16,7 @@ function RouterConfig() {
   return (
     <>
       <Navbar />
-      <Router style={{ marginLeft: '100px', marginRight: '100px' }}>
+      <Router>
         <Login path="/login" />
         <Home path="/" />
         <Repos path="/repo" />

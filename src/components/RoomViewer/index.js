@@ -1,9 +1,23 @@
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable no-plusplus */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 import { SmallRoomItem } from 'components';
 
 function RoomViewer(props) {
+  const renderRom = () => {
+    const result = [];
+    for (let i = 0; i < 12; i++) {
+      const item = (
+        <Grid item md={3} xs={6} lg={3} sm={4} key={i}>
+          <SmallRoomItem sale={i % 3 === 0 ? true : false} />
+        </Grid>
+      );
+      result.push(item);
+    }
+    return result;
+  };
   return (
     <>
       <div style={{ width: '100%', marginTop: '40px', marginBottom: '40px' }}>
@@ -18,30 +32,7 @@ function RoomViewer(props) {
               </Box>
             </div>
           </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={props.sale} />
-          </Grid>
+          {renderRom()}
         </Grid>
       </div>
     </>

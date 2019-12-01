@@ -1,14 +1,15 @@
 /* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import { CityViewer, RoomViewer, VideoIntro } from 'components';
+import { Container } from '@material-ui/core';
 
 function Home() {
   return (
-    <>
+    <div>
       <div>
         <VideoIntro />
       </div>
-      <div>
+      <Container>
         <CityViewer
           tilte="Địa điểm nổi bật hôm nay"
           sologen="Đây là những địa điểm nổi bật nhất Lalasttay"
@@ -27,8 +28,8 @@ function Home() {
           tilte="Các chỗ ở được đặt nhiều nhất nhất"
           sologen="Đây là những chỗ ở nổi bật nhất của lalastay"
         />
-      </div>
-    </>
+      </Container>
+    </div>
   );
 }
 

@@ -2,7 +2,21 @@
   font-size: 20px !important;
 }
 
-
-.MuiTableCell-root{
+.MuiTableCell-root {
   font-size: 24px !important;
+}
+.container-show-image >.swiper-container {
+  height: 300px !important;
+  margin-bottom: 10px !important;
+}
+.slide-under{
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.container-show-image:hover .swiper-button-next {
+  display: block !important;
+}
+.container-show-image:hover .swiper-button-prev {
+  display: block !important;
 }
