@@ -1,43 +1,54 @@
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable no-plusplus */
 import React from 'react';
 import './style.css';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Container } from '@material-ui/core';
 import { SmallRoomItem, VideoIntro } from 'components';
 
 function HomeByArea() {
+  const renderRom = () => {
+    const result = [];
+    for (let i = 1; i < 33; i++) {
+      const item = (
+        <Grid item md={3} xs={6} lg={3} sm={4} key={i}>
+          <SmallRoomItem sale={i % 3 === 0 ? true : false} />
+        </Grid>
+      );
+      result.push(item);
+    }
+    return result;
+  };
   return (
     <>
       <VideoIntro />
-      <div>
-        <Box fontWeight={600} fontSize={24} marginBottom={5}>
-          Đà lạt nay có gì
+      <Container>
+        <div style={{ marginBottom: '20px' }}>
+          {' '}
+          <button type="button" className="button-best-fit">
+            Phù hợp nhất
+          </button>
+          <button type="button" className="outline-button">
+            {' '}
+            Rẻ nhất{' '}
+          </button>
+          <button type="button" className="outline-button">
+            {' '}
+            Đang khuyến mãi{' '}
+          </button>
+          <select className="outline-button">
+            <option>Lựa chọn khác</option>
+            <option>A</option>
+            <option>B</option>
+          </select>
+        </div>
+
+        <Box fontWeight={400} fontSize={24} marginBottom={3}>
+          Có 415 điểm phù hợp với bạn
         </Box>
         <Grid direction="row" container justify="center" alignItems="center" spacing={1}>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem ssale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
-          <Grid item md={3} xs={6} lg={3} sm={4}>
-            <SmallRoomItem sale={false} />
-          </Grid>
+          {renderRom()}
         </Grid>
-      </div>
+      </Container>
     </>
   );
 }

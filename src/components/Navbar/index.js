@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Popper from '@material-ui/core/Popper';
 import './style.css';
 import RoomIcon from '@material-ui/icons/Room';
+import { navigate } from '@reach/router';
 import logo from '../../assets/logo.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -54,7 +55,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const suggestions = [
-  { label: 'Đà Lạt' },
+  { label: 'Đà lạt' },
   { label: 'TP HCM' },
   { label: 'Vũng Tàu' },
   { label: 'Đồng nai' },
@@ -99,7 +100,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   const parts = parse(suggestion.label, matches);
 
   return (
-    <MenuItem selected={isHighlighted} component="div">
+    <MenuItem selected={isHighlighted} component="div" onClick={() => navigate('/home-by-area')}>
       <div>
         <RoomIcon style={{ color: '#FC6C85', fontSize: '18px', marginRight: '10px' }} />
         {parts.map(part => (

@@ -1,14 +1,17 @@
 import React from 'react';
 import './style.css';
-import ImageForDetail from 'components/ImageForDetail';
-import { BodyHomedetail } from 'components';
+// import ImageForDetail from 'components/ImageForDetail';
+import { BodyHomedetail, ShowImageForDetail } from 'components';
+import { Container } from '@material-ui/core';
 
 function Homedetail() {
   return (
-    <>
-      <ImageForDetail />
-      <BodyHomedetail />
-    </>
+    <div>
+      <ShowImageForDetail />
+      <Container>
+        <BodyHomedetail />
+      </Container>
+    </div>
   );
 }
 
