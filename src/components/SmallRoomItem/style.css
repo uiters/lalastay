@@ -5,7 +5,7 @@
   max-height: 330px; */
   min-width: 160px;
   max-width: 290px;
-  max-height:380px;
+  max-height: 380px;
   min-height: 230px;
 
   margin: 5px;
@@ -101,7 +101,6 @@
 
 .container-img {
   width: 100%;
-
 }
 
 .swiper-button-next:after,
@@ -129,11 +128,9 @@
 }
 .swiper-container {
   height: 100%;
-
 }
 
 .province {
-
   background-color: #9708cc;
   border-radius: 10px;
   padding: 3px 6px;
@@ -156,7 +153,7 @@
   top: 5px;
   left: 5px;
   z-index: 200;
-  display: flex
+  display: flex;
 }
 .showMore {
   -webkit-line-clamp: 3;
