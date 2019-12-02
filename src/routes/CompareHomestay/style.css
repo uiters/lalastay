@@ -5,11 +5,11 @@
 .MuiTableCell-root {
   font-size: 24px !important;
 }
-.container-show-image >.swiper-container {
+.container-show-image > .swiper-container {
   height: 300px !important;
   margin-bottom: 10px !important;
 }
-.slide-under{
+.slide-under {
   width: 100px !important;
   height: 100px !important;
 }

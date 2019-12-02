@@ -5,7 +5,7 @@
   max-height: 330px; */
   min-width: 160px;
   max-width: 290px;
-  max-height:380px;
+  max-height: 380px;
   min-height: 230px;
 
   margin: 5px;
@@ -101,7 +101,6 @@
 
 .container-img {
   width: 100%;
-
 }
 
 .swiper-button-next:after,
@@ -129,7 +128,6 @@
 }
 .swiper-container {
   height: 100%;
-
 }
 
 .province {
@@ -163,5 +161,4 @@
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   display: -webkit-box;
-
 }

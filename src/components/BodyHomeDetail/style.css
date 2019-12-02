@@ -41,12 +41,11 @@
   height: 40px;
 }
 
-td:nth-child(1){
+td:nth-child(1) {
   border-right: 1px solid black;
   padding: 10px 0px;
   width: 200px;
-
 }
-.container-table td:nth-child(2){
- padding-left: 40px;
+.container-table td:nth-child(2) {
+  padding-left: 40px;
 }
