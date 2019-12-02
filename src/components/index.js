@@ -10,3 +10,5 @@ export { default as Comment } from './comment';
 export { default as Comments } from './Comments';
 export { default as SmallRoomItemCompare } from './SmallRoomItemCompare';
 export { default as ShowImageForDetail } from './ShowImageForDetail';
+export { default as SearchItemForCompare } from './SearchItemForCompare';
+export { default as InputSearchForCompare } from './InputSearchForCompare';

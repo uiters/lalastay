@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SmallRoomItem } from 'components';
+import { SmallRoomItem, InputSearchForCompare } from 'components';
 import Swiper from 'react-id-swiper';
 import {
   Table,
@@ -9,6 +9,7 @@ import {
   TableRow,
   Container,
   Grid,
+  Box,
 } from '@material-ui/core';
 import ss1 from '../../assets/ss1.jpg';
 import ss2 from '../../assets/ss2.jpg';
@@ -94,6 +95,19 @@ function CompareHomestaty() {
         <SmallRoomItem sale />
         <SmallRoomItem sale={false} />
       </div> */}
+      <Box textAlign="center" fontSize={30}>
+        So sánh homestay
+      </Box>
+      {/* <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+        <Box display="inline" className="search-container" width={350}>
+          <input placeholder="Tìm kiếm" className="search-input" />
+        </Box>
+        <Box display="inline" className="button-search-container" width={50}>
+          <button className="button-search" type="button" />
+        </Box>
+      </div>
+      <SearchItemForCompare /> */}
+      <InputSearchForCompare />
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
