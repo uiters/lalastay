@@ -3,11 +3,13 @@
   max-width: 300px;
   min-height: 154px;
   max-height: 330px; */
+
   min-width: 160px;
   max-width: 290px;
   max-height: 380px;
   min-height: 230px;
-
+  /* height: 100%;
+width: 100%; */
   margin: 5px;
   background: #ffffff;
   border-radius: 4px 4px 0px 0px;
@@ -101,6 +103,8 @@
 
 .container-img {
   width: 100%;
+  position: relative;
+  display: flex;
 }
 
 .swiper-button-next:after,

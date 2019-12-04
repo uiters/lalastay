@@ -178,7 +178,12 @@ function Navbar() {
           <Grid item xs={6}>
             <Grid container direction="row" alignItems="center" justify="flex-start">
               <Box className={classes.logo}>
-                <img src={logo} className={classes.logoImg} alt="img" />
+                <img
+                  src={logo}
+                  className={classes.logoImg}
+                  alt="img"
+                  onClick={() => navigate('/')}
+                />
               </Box>
               <Box display="inline" className="search-container">
                 <Autosuggest

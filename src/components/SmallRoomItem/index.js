@@ -5,10 +5,12 @@ import StarIcon from '@material-ui/icons/Star';
 import Swiper from 'react-id-swiper';
 import { Link } from '@reach/router';
 import PersonIcon from '@material-ui/icons/Person';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import smallRoom from '../../assets/small_room.jpg';
 import 'swiper/css/swiper.css';
 import './style.css';
+
 import ss1 from '../../assets/ss1.jpg';
 import ss2 from '../../assets/ss2.jpg';
 import ss3 from '../../assets/ss3.jpg';
@@ -183,7 +185,18 @@ function SmallRoomItem(props) {
             </div>
           </div>
         </Swiper>
+        {props.compare && (
+          <div>
+            <HighlightOffIcon
+              style={{ right: '0px', position: 'absolute', zIndex: 1001 }}
+              onClick={() => {
+                props.close();
+              }}
+            />
+          </div>
+        )}
       </div>
+
       <div style={{ padding: '0 5px' }}>
         <Grid container direction="row" justify="space-between" alignItems="center">
           <Box className="price" fontSize={18} lineHeight={2}>
@@ -192,7 +205,7 @@ function SmallRoomItem(props) {
             </Box>
             <Box display="inline"> 1.5tr/đêm</Box>
             {props.sale === true && (
-              <Box display="inline" marginLeft={2} fontWeight={300}>
+              <Box display="inline" marginLeft={1} fontWeight={300}>
                 <strike> 2.5tr</strike>
               </Box>
             )}

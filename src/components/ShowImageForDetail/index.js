@@ -1,6 +1,8 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
+import Carousel, { Modal, ModalGateway } from 'react-images';
+
 import './style.css';
 import s1 from '../../assets/s1.jpg';
 import s2 from '../../assets/s2.jpg';
@@ -24,39 +26,37 @@ function ShowImageForDetail() {
       prevEl: '.swiper-button-prev',
     },
   };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    const temp = modalIsOpen;
+    setModalIsOpen(!temp);
+  };
 
   const imgs = [s1, s2, s3, s4, s5, s3, s2, s4, s5];
+  const images = [{ src: s1 }, { src: s2 }, { src: s3 }, { src: s4 }, { src: s5 }];
   return (
-    <div className="conatiner-slie-img">
-      <Swiper {...params}>
-        {/* <div className="container-img">
-          <img src={s1} alt="ảnh" className="image" />
-        </div>
-        <div className="container-img">
-          <img src={s2} alt="ảnh" className="image" />
-        </div>
-        <div className="container-img">
-          <img src={s3} alt="ảnh" className="image" />
-        </div>
-        <div className="container-img">
-          <img src={s4} alt="ảnh" className="image" />
-        </div>
-        <div className="container-img">
-          <img src={s5} alt="ảnh" className="image" />
-        </div>
-        <div className="container-img">
-          <img src={s2} alt="ảnh" className="image" />
-        </div> */}
-        {imgs &&
-          imgs.map((img, index) => {
-            return (
-              <div className="slie-img" key={new Date() + index}>
-                <img src={img} alt="ảnh" className="image" />
-              </div>
-            );
-          })}
-      </Swiper>
-    </div>
+    <>
+      <div className="conatiner-slie-img">
+        <Swiper {...params}>
+          {imgs &&
+            imgs.map((img, index) => {
+              return (
+                <div className="slie-img" key={new Date() + index}>
+                  <img src={img} alt="ảnh" className="image" onClick={() => setModalIsOpen(true)} />
+                </div>
+              );
+            })}
+        </Swiper>
+      </div>
+      <ModalGateway>
+        {modalIsOpen ? (
+          <Modal onClose={toggleModal}>
+            <Carousel views={images} />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </>
   );
 }
 

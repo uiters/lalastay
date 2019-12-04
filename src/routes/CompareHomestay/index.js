@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 import React, { useState, useEffect } from 'react';
 import { SmallRoomItem, InputSearchForCompare } from 'components';
 import Swiper from 'react-id-swiper';
@@ -11,6 +12,7 @@ import {
   Grid,
   Box,
 } from '@material-ui/core';
+import StarIcon from '@material-ui/icons/Star';
 import ss1 from '../../assets/ss1.jpg';
 import ss2 from '../../assets/ss2.jpg';
 import ss3 from '../../assets/ss3.jpg';
@@ -28,6 +30,7 @@ function CompareHomestaty() {
   const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
   const [_gallerySwiper, _getGallerySwiper] = useState(null);
   const [_thumbnailSwiper, _getThumbnailSwiper] = useState(null);
+  const [close, setClose] = useState(false);
 
   const gallerySwiperParams = {
     getSwiper: getGallerySwiper,
@@ -88,26 +91,21 @@ function CompareHomestaty() {
       _thumbnailSwiper.controller.control = _gallerySwiper;
     }
   }, [_gallerySwiper, _thumbnailSwiper]);
+
+  const chooseHome = () => {
+    setClose(false);
+  };
+
+  const closeHome = () => {
+    setClose(true);
+  };
   return (
     <Container>
       <div style={{ height: '100px' }} />
-      {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <SmallRoomItem sale />
-        <SmallRoomItem sale={false} />
-      </div> */}
-      <Box textAlign="center" fontSize={30}>
+      <Box textAlign="center" fontSize={40}>
         So sánh homestay
       </Box>
-      {/* <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
-        <Box display="inline" className="search-container" width={350}>
-          <input placeholder="Tìm kiếm" className="search-input" />
-        </Box>
-        <Box display="inline" className="button-search-container" width={50}>
-          <button className="button-search" type="button" />
-        </Box>
-      </div>
-      <SearchItemForCompare /> */}
-      <InputSearchForCompare />
+      <InputSearchForCompare choose={chooseHome} />
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -118,58 +116,110 @@ function CompareHomestaty() {
                 <SmallRoomItem sale />
               </div>
             </TableCell>
-            <TableCell>
-              <div>
-                {' '}
-                <SmallRoomItem sale={false} />
-              </div>
+            <TableCell className={{ width: '50%' }}>
+              {!close && (
+                <div
+                  style={{ position: 'relative', display: 'flex', justifyContent: 'space-between' }}
+                >
+                  {' '}
+                  <SmallRoomItem sale={false} compare={true} close={closeHome} />
+                </div>
+              )}
             </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell style={{ width: '200px' }}>Tên homestay</TableCell>
-            <TableCell>Homestaty gâu đần</TableCell>
-            <TableCell>Biệt thự ngoi nhà ma</TableCell>
           </TableRow>
         </TableHead>
+        <TableRow>
+          <TableCell>
+            {' '}
+            <Box fontWeight={600}>Tên homestay</Box>
+          </TableCell>
+          <TableCell>
+            <Box fontWeight={600}>Homestaty gâu đần </Box>
+          </TableCell>
+          <TableCell>{!close && <Box fontWeight={600}>Biệt thự ngôi nhà ma</Box>}</TableCell>
+        </TableRow>
+
         <TableBody>
           <TableRow>
-            <TableCell>Đánh giá</TableCell>
-            <TableCell>Homestaty gâu đần</TableCell>
-            <TableCell>Biệt thự ngoi nhà ma</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Loại homestay</TableCell>
-            <TableCell>Nhà riêng</TableCell>
-            <TableCell>Phòng riêng</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Chi phí</TableCell>
-            <TableCell>2,340,000VNĐ/ ngày</TableCell>
-            <TableCell>2,340,000VNĐ/ ngày</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Số khách tối đa</TableCell>
-            <TableCell>3 người</TableCell>
-            <TableCell>2 người</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Quy định</TableCell>
             <TableCell>
-              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+              {' '}
+              <Box fontWeight={600}>Đánh giá</Box>
             </TableCell>
             <TableCell>
-              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+              <StarIcon style={{ color: '#9708CC', fontSize: '18px' }} />
+              <span style={{ fontSize: '15px' }}>4.0</span>
+            </TableCell>
+            {!close && (
+              <TableCell style={{ fontSize: '12px' }}>
+                <StarIcon style={{ color: '#9708CC', fontSize: '18px' }} />
+                <span style={{ fontSize: '15px' }}>4.6</span>
+              </TableCell>
+            )}
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              <Box fontWeight={600}>Loại homestay</Box>
+            </TableCell>
+            <TableCell>
+              {' '}
+              <Box> Nhà riêng</Box>
+            </TableCell>
+            <TableCell> {!close && <Box> Phòng riêng</Box>}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              {' '}
+              <Box fontWeight={600}> Chi phí</Box>
+            </TableCell>
+            <TableCell>
+              {' '}
+              <Box>2,340,000VNĐ/ ngày</Box>
+            </TableCell>
+            <TableCell> {!close && <Box>2,340,000VNĐ/ ngày</Box>}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              <Box fontWeight={600}> Số khách tối đa</Box>
+            </TableCell>
+            <TableCell>
+              {' '}
+              <Box>3 người</Box>
+            </TableCell>
+            <TableCell> {!close && <Box>2 người</Box>}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              {' '}
+              <Box fontWeight={600}>Quy định</Box>
+            </TableCell>
+            <TableCell>
+              <Box>
+                Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
+                Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+              </Box>
+            </TableCell>
+            <TableCell>
+              {!close && (
+                <Box>
+                  Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ
+                  sáng. Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+                </Box>
+              )}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Địa chỉ</TableCell>
-            <TableCell>Đà lạt, Lâm Đồng, Việt Nam</TableCell>
-            <TableCell>Bảo Lộc, Lâm Đồng, Việt Nam</TableCell>
+            <TableCell>
+              <Box fontWeight={600}>Địa chỉ</Box>
+            </TableCell>
+            <TableCell>
+              <Box>Đà lạt, Lâm Đồng, Việt Nam</Box>
+            </TableCell>
+            <TableCell>{!close && <Box>Bảo Lộc, Lâm Đồng, Việt Nam</Box>}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
+
+      {/* slide so sánh hai home stay */}
 
       <Grid direction="row" container justify="center" alignItems="center" spacing={1}>
         <Grid item md={6}>
@@ -204,35 +254,37 @@ function CompareHomestaty() {
           </div>
         </Grid>
         <Grid item md={6}>
-          <div className="container-show-image">
-            <Swiper {...seGallerySwiperParams}>
-              <div className="swiper-slide" />
-              <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
-              <div className="swiper-slide">
-                <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
-              </div>
-              <div className="swiper-slide">
-                <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
-              </div>
-              <div className="swiper-slide">
-                <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
-              </div>
-              <div>
-                <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
-              </div>
-            </Swiper>
-            <Swiper {...seThumbnailSwiperParams}>
-              <img className="slide-under swiper-slide" src={ss6} alt="img" />
+          {!close && (
+            <div className="container-show-image">
+              <Swiper {...seGallerySwiperParams}>
+                <div className="swiper-slide" />
+                <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                </div>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                </div>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                </div>
+                <div>
+                  <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                </div>
+              </Swiper>
+              <Swiper {...seThumbnailSwiperParams}>
+                <img className="slide-under swiper-slide" src={ss6} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss7} alt="img" />
+                <img className="slide-under swiper-slide" src={ss7} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss8} alt="img" />
+                <img className="slide-under swiper-slide" src={ss8} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss9} alt="img" />
+                <img className="slide-under swiper-slide" src={ss9} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss10} alt="img" />
-            </Swiper>
-          </div>
+                <img className="slide-under swiper-slide" src={ss10} alt="img" />
+              </Swiper>
+            </div>
+          )}
         </Grid>
       </Grid>
     </Container>

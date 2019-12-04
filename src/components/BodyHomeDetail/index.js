@@ -6,7 +6,7 @@ import tivi from '../../assets/tivi.svg';
 import hairdry from '../../assets/hairdry.svg';
 import kettle from '../../assets/kettle.svg';
 import map from '../../assets/map.PNG';
-import { Comments, SmallRoomItemCompare } from '../index';
+import { Comments, HomestaySimilar } from '../index';
 
 import './style.css';
 
@@ -14,7 +14,7 @@ function BodyHomedetail() {
   return (
     <div>
       <Grid container direction="row" justify="space-between" alignItems="center">
-        <Box className="name-home" fontSize={30} fontWeight={600}>
+        <Box className="name-home" fontSize={35} fontWeight={500}>
           Home statay Gâu đần
         </Box>
         <button className="variant-button" type="button">
@@ -22,10 +22,12 @@ function BodyHomedetail() {
         </button>
       </Grid>
       <Box fontSize={25} fontWeight={300} marginBottom={3} marginTop={3}>
-        Đà lạt, Lâm Đồng, Việt Nam - vị trí tuyệt vời xem <b>*Map</b>
+        <i>
+          Đà lạt, Lâm Đồng, Việt Nam - vị trí tuyệt vời xem <b>*Map</b>
+        </i>
       </Box>
       <div>
-        <Box fontWeight={300} fontSize={20} lineHeight={2} marginBottom={5}>
+        <Box fontWeight={300} fontSize={22} lineHeight={2} marginBottom={5}>
           Nằm ở trung tâm thành phố Đà lạt và chỉ cách quảng trường 2 phút đi bộ, chúng tôi cung cấp
           các lựa chọn phòng riêng và phòng ngủ tập thể dành cho các cá nhân, khách du lịch bụi và
           các nhóm khách. Nằm ở trung tâm thành phố Đà lạt và chỉ cách quảng trường 2 phút đi bộ,
@@ -35,7 +37,7 @@ function BodyHomedetail() {
           cho các cá nhân, khách du lịch bụi và các nhóm khách.
         </Box>
         <div>
-          <Box fontWeight={600} fontSize={18}>
+          <Box fontWeight={600} fontSize={22}>
             Tiện nghi
           </Box>
           <Grid container direction="row" justify="space-around" alignItems="center">
@@ -46,79 +48,52 @@ function BodyHomedetail() {
             <img className="convenient-img" src={kettle} alt="kettle " />
           </Grid>
         </div>
-        {/* <Box style={{ fontSize: '18px', display: 'flex' }} lineHeight={3}>
-          <Box width={200} fontWeight={600}>
-            Loại homestaty
-          </Box>
-          <Box>Nhà riêng</Box>
-        </Box>
-        <Box style={{ fontSize: '18px', display: 'flex' }} lineHeight={3}>
-          <Box width={200} fontWeight={600}>
-            Thông tin nhà{' '}
-          </Box>
-          <Box>phòng khách, 1 phòng tắm, 1 phòng ngủ, 1 nhà bếp 2,</Box>
-        </Box>
-        <Box style={{ fontSize: '18px', display: 'flex' }} lineHeight={3}>
-          <Box width={200} fontWeight={600}>
-            Giá
-          </Box>
-          <Box>2.5Tr</Box>
-        </Box>
-        <Box style={{ fontSize: '18px', display: 'flex' }} lineHeight={3}>
-          <Box width={200} fontWeight={600}>
-            Thời hian ở tối thiểu
-          </Box>
-          <Box>1 ngày</Box>
-        </Box>
-        <Box style={{ fontSize: '18px' }} lineHeight={3}>
-          <Box width={200} fontWeight={600}>
-            Quy định
-          </Box>
-          <Box lineHeight={2}>
-            Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-            Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
-          </Box>
-        </Box>
-        <Box lineHeight={4}>
-          <Grid
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="center"
-            style={{ fontSize: '18px' }}
-          >
-            <Box fontWeight={600}>Liên hệ</Box>
-            <Box>Số điện thoại: 0987654310</Box>
-            <Box>Email: lalastay@gmail.con</Box>
-          </Grid>
-        </Box> */}
+
         <div>
-          <table style={{ fontSize: '20px' }} className="container-table">
+          <table style={{ fontSize: '22px' }} className="container-table">
             <tr>
-              <td>Loại homestaty</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Loại homestaty</Box>
+              </td>
               <td>Nhà riêng</td>
             </tr>
             <tr>
-              <td> Thông tin nhà</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Thông tin nhà </Box>
+              </td>
               <td>phòng khách, 1 phòng tắm, 1 phòng ngủ, 1 nhà bếp 2</td>
             </tr>
             <tr>
-              <td> Giá</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Giá </Box>{' '}
+              </td>
               <td>1.5Tr</td>
             </tr>
             <tr>
-              <td>Thời hian ở tối thiểu</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Thời hian ở tối thiểu </Box>
+              </td>
               <td>1 ngày</td>
             </tr>
             <tr>
-              <td>Quy định</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Quy định </Box>
+              </td>
               <td>
                 Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
                 Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
               </td>
             </tr>
             <tr>
-              <td>Liên hệ</td>
+              <td>
+                {' '}
+                <Box fontWeight={600}>Liên hệ</Box>
+              </td>
               <td>
                 {' '}
                 <Box display="inline" marginRight={40}>
@@ -128,7 +103,7 @@ function BodyHomedetail() {
               </td>
             </tr>
           </table>
-          <Box fontSize={18} fontWeight={600}>
+          <Box fontSize={22} fontWeight={600}>
             Map
           </Box>
           <Box width="100%" height={250}>
@@ -139,31 +114,31 @@ function BodyHomedetail() {
             />
           </Box>
         </div>
-        <Grid container direction="row" justify="space-between" alignItems="center">
-          <Box fontSize={18} lineHeight={3} fontWeight={600}>
-            Để lại Email hoặc số điện thoại để nhận ưu đãi tốt nhẩt
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          <Box fontSize={20} lineHeight={3} fontWeight={600} marginTop={4} marginBottom={2}>
+            <i>Để lại Email hoặc số điện thoại để nhận ưu đãi tốt nhẩt</i>
           </Box>
           <div style={{ display: 'flex' }}>
-            <Box display="inline" className="search-container" width={500}>
-              <input placeholder="Tìm kiếm" className="search-input" />
+            <Box display="inline" className="space-between" width={500}>
+              <input placeholder="Nhập email ...  " className="search-input" />
             </Box>
             <Box display="inline" className="button-search-container">
-              <button className="button-search" type="button" />
+              <button className="button-send-email" type="button" />
             </Box>
           </div>
 
-          <div style={{ marginBottom: '100px' }}>
+          {/* <div style={{ marginBottom: '100px' }}>
             <Box display="inline" className="search-container" />
             <Box display="inline" className="button-search-container">
               <button className="b-search" type="button" />
             </Box>
-          </div>
+          </div> */}
         </Grid>
         <div>
           <Box fontSize={25} lineHeight={3} fontWeight={600}>
             Homestay tương tự
           </Box>
-          <Grid direction="row" container justify="center" alignItems="center" spacing={1}>
+          {/* <Grid direction="row" container justify="center" alignItems="center" spacing={1}>
             <Grid item md={3} xs={6} lg={3} sm={4}>
               <SmallRoomItemCompare />
             </Grid>
@@ -176,10 +151,11 @@ function BodyHomedetail() {
             <Grid item md={3} xs={6} lg={3} sm={4}>
               <SmallRoomItemCompare />
             </Grid>
-          </Grid>
+          </Grid> */}
+          <HomestaySimilar />
         </div>
         <div>
-          <Box marginTop={5} marginBottom={5}>
+          <Box marginTop={5} marginBottom={2} fontSize={22} fontWeight={500}>
             Đánh giá và bình luận
           </Box>
           <div>

@@ -10,7 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popper from '@material-ui/core/Popper';
-import { navigate } from '@reach/router';
+// import { navigate } from '@reach/router';
 import { SearchItemForCompare } from 'components';
 
 import './style.css';
@@ -96,20 +96,22 @@ function renderInputComponent(inputProps) {
   );
 }
 
-function renderSuggestion(suggestion, { query, isHighlighted }) {
+function renderSuggestion(suggestion, { query }) {
   const matches = match(suggestion.label, query);
   const parts = parse(suggestion.label, matches);
-
+  parts.pop();
   return (
-    <MenuItem selected={isHighlighted} component="div" onClick={() => navigate('/home-by-area')}>
+    <MenuItem component="div" onClick={() => {}}>
       <div>
         {parts.map(part => (
-          <SearchItemForCompare key={part.text} />
+          //
 
           // <span key={part.text} style={{ fontWeight: part.highlight ? 500 : 400 }}>
           //   {part.text}
-
           // </span>
+          <div key={part.text + new Date()}>
+            <SearchItemForCompare />
+          </div>
         ))}
       </div>
     </MenuItem>
@@ -175,7 +177,7 @@ function InputSearchForCompare() {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
-        <Box display="inline" className="search-container" width={350}>
+        <Box display="inline" className="search-container" width={400}>
           <Autosuggest
             {...autosuggestProps}
             inputProps={{

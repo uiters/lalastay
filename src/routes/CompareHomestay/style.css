@@ -20,3 +20,14 @@
 .container-show-image:hover .swiper-button-prev {
   display: block !important;
 }
+
+@font-face {
+  font-family: 'Harmonia';
+  src: local('Harmonia') url(../../fonts/Harmonia-Regular.ttf) format('truetype');
+}
+
+.MuiTableCell-root {
+  font-family: 'Harmonia';
+  font-size: 20px !important;
+  color: rgba(43, 43, 43, 0.8) !important;
+}
