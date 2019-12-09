@@ -63,7 +63,12 @@ function Comments() {
         <div style={{ width: '100%', textAlign: 'center' }}>
           <button
             onClick={show}
-            style={{ border: 'none', backgroundColor: 'transparent' }}
+            style={{
+              border: 'none',
+              backgroundColor: 'transparent',
+              marginBottom: '20px',
+              fontSize: '18px',
+            }}
             className="more"
           >
             Xem thêm ...

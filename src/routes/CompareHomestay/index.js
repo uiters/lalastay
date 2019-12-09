@@ -12,6 +12,7 @@ import {
   Grid,
   Box,
 } from '@material-ui/core';
+import { navigate } from '@reach/router';
 import StarIcon from '@material-ui/icons/Star';
 import ss1 from '../../assets/ss1.jpg';
 import ss2 from '../../assets/ss2.jpg';
@@ -23,18 +24,22 @@ import ss7 from '../../assets/ss7.jpg';
 import ss8 from '../../assets/ss8.jpg';
 import ss9 from '../../assets/ss9.jpg';
 import ss10 from '../../assets/ss10.jpg';
+import addHome from '../../assets/addHome.PNG';
+
 import './style.css';
 
 function CompareHomestaty() {
-  const [gallerySwiper, getGallerySwiper] = useState(null);
-  const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
-  const [_gallerySwiper, _getGallerySwiper] = useState(null);
-  const [_thumbnailSwiper, _getThumbnailSwiper] = useState(null);
+  const [gallerySwiper, setGallerySwiper] = useState(null);
+  const [thumbnailSwiper, setThumbnailSwiper] = useState(null);
+  const [_gallerySwiper, setGallerySwiper_] = useState(null);
+  const [_thumbnailSwiper, setThumbnailSwiper_] = useState(null);
   const [close, setClose] = useState(false);
 
   const gallerySwiperParams = {
-    getSwiper: getGallerySwiper,
+    getSwiper: setGallerySwiper,
     spaceBetween: 10,
+    slidesPerView: 'auto',
+    centeredSlides: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -42,25 +47,7 @@ function CompareHomestaty() {
   };
 
   const thumbnailSwiperParams = {
-    getSwiper: getThumbnailSwiper,
-    spaceBetween: 10,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    touchRatio: 0.2,
-    slideToClickedSlide: true,
-  };
-
-  const seGallerySwiperParams = {
-    getSwiper: _getGallerySwiper,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  };
-
-  const seThumbnailSwiperParams = {
-    getSwiper: _getThumbnailSwiper,
+    getSwiper: setThumbnailSwiper,
     spaceBetween: 10,
     centeredSlides: true,
     slidesPerView: 'auto',
@@ -69,16 +56,29 @@ function CompareHomestaty() {
   };
 
   useEffect(() => {
-    if (
-      gallerySwiper !== null &&
-      gallerySwiper.controller &&
-      thumbnailSwiper !== null &&
-      thumbnailSwiper.controller
-    ) {
+    if (gallerySwiper !== null && thumbnailSwiper !== null) {
       gallerySwiper.controller.control = thumbnailSwiper;
       thumbnailSwiper.controller.control = gallerySwiper;
     }
   }, [gallerySwiper, thumbnailSwiper]);
+
+  const seGallerySwiperParams = {
+    getSwiper: setGallerySwiper_,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  };
+
+  const seThumbnailSwiperParams = {
+    getSwiper: setThumbnailSwiper_,
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+  };
 
   useEffect(() => {
     if (
@@ -99,6 +99,7 @@ function CompareHomestaty() {
   const closeHome = () => {
     setClose(true);
   };
+
   return (
     <Container>
       <div style={{ height: '100px' }} />
@@ -109,14 +110,21 @@ function CompareHomestaty() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell />
-            <TableCell>
+            <TableCell style={{ width: '15%' }} />
+            <TableCell style={{ width: '40%' }}>
               <div>
                 {' '}
                 <SmallRoomItem sale />
               </div>
             </TableCell>
-            <TableCell className={{ width: '50%' }}>
+            <TableCell style={{ width: '40%' }}>
+              {close && (
+                <div
+                  style={{ position: 'relative', display: 'flex', justifyContent: 'space-between' }}
+                >
+                  <img style={{ idth: '250px', height: '300px' }} src={addHome} alt="anh" />
+                </div>
+              )}
               {!close && (
                 <div
                   style={{ position: 'relative', display: 'flex', justifyContent: 'space-between' }}
@@ -225,8 +233,9 @@ function CompareHomestaty() {
         <Grid item md={6}>
           <div className="container-show-image">
             <Swiper {...gallerySwiperParams}>
-              <div className="swiper-slide" />
-              <img style={{ width: '100%', height: '100%' }} src={ss1} alt="img" />
+              <div className="swiper-slide ">
+                <img style={{ width: '100%', height: '100%' }} src={ss1} alt="img" />
+              </div>
               <div className="swiper-slide">
                 <img style={{ width: '100%', height: '100%' }} src={ss2} alt="img" />
               </div>
@@ -240,23 +249,45 @@ function CompareHomestaty() {
                 <img style={{ width: '100%', height: '100%' }} src={ss5} alt="img" />
               </div>
             </Swiper>
-            <Swiper {...thumbnailSwiperParams}>
-              <img className="slide-under swiper-slide" src={ss1} alt="img" />
+            <div className="container-thum">
+              <Swiper {...thumbnailSwiperParams}>
+                <img className="slide-under swiper-slide swiper-slide-active" src={ss1} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss2} alt="img" />
+                <img className="slide-under swiper-slide" src={ss2} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss3} alt="img" />
+                <img className="slide-under swiper-slide" src={ss3} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss4} alt="img" />
+                <img className="slide-under swiper-slide" src={ss4} alt="img" />
 
-              <img className="slide-under swiper-slide" src={ss5} alt="img" />
-            </Swiper>
+                <img className="slide-under swiper-slide" src={ss5} alt="img" />
+              </Swiper>
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <button className="variant-button" type="button">
+              ĐẶT NGAY
+            </button>
           </div>
         </Grid>
         <Grid item md={6}>
           {!close && (
             <div className="container-show-image">
               <Swiper {...seGallerySwiperParams}>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                </div>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                </div>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                </div>
+                <div className="swiper-slide">
+                  <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                </div>
+                <div>
+                  <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                </div>
                 <div className="swiper-slide" />
                 <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
                 <div className="swiper-slide">
@@ -272,17 +303,37 @@ function CompareHomestaty() {
                   <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
                 </div>
               </Swiper>
-              <Swiper {...seThumbnailSwiperParams}>
-                <img className="slide-under swiper-slide" src={ss6} alt="img" />
+              <div className="container-thum">
+                <Swiper {...seThumbnailSwiperParams}>
+                  <img className="slide-under swiper-slide" src={ss6} alt="img" />
 
-                <img className="slide-under swiper-slide" src={ss7} alt="img" />
+                  <img className="slide-under swiper-slide" src={ss7} alt="img" />
 
-                <img className="slide-under swiper-slide" src={ss8} alt="img" />
+                  <img className="slide-under swiper-slide" src={ss8} alt="img" />
 
-                <img className="slide-under swiper-slide" src={ss9} alt="img" />
+                  <img className="slide-under swiper-slide" src={ss9} alt="img" />
 
-                <img className="slide-under swiper-slide" src={ss10} alt="img" />
-              </Swiper>
+                  <img className="slide-under swiper-slide" src={ss10} alt="img" />
+                  <img className="slide-under swiper-slide" src={ss6} alt="img" />
+
+                  <img className="slide-under swiper-slide" src={ss7} alt="img" />
+
+                  <img className="slide-under swiper-slide" src={ss8} alt="img" />
+
+                  <img className="slide-under swiper-slide" src={ss9} alt="img" />
+
+                  <img className="slide-under swiper-slide" src={ss10} alt="img" />
+                </Swiper>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <button
+                  className="variant-button"
+                  type="button"
+                  onClick={() => navigate('/home-detail')}
+                >
+                  XEM CHI TIẾT
+                </button>
+              </div>
             </div>
           )}
         </Grid>

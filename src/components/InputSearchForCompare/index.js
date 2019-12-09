@@ -55,93 +55,98 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const suggestions = [
-  { label: 'Đà lạt' },
-  { label: 'TP HCM' },
-  { label: 'Vũng Tàu' },
-  { label: 'Đồng nai' },
-  { label: 'Huế' },
-  { label: 'Hà Nội' },
-  { label: 'Phú quốc' },
-  { label: 'Tam Đảo' },
-  { label: 'Cà Mau' },
-  { label: 'Cần Thơ' },
-  { label: 'Đà Nẵng' },
-  { label: 'Bình Định' },
-  { label: 'Quảng Ngải' },
-  { label: 'Quảng Nam' },
-  { label: 'Nghệ An' },
-  { label: 'Sơn La' },
-  { label: 'Bến Tre' },
-];
+function InputSearchForCompare(props) {
+  const suggestions = [
+    { label: 'Đà lạt' },
+    { label: 'TP HCM' },
+    { label: 'Vũng Tàu' },
+    { label: 'Đồng nai' },
+    { label: 'Huế' },
+    { label: 'Hà Nội' },
+    { label: 'Phú quốc' },
+    { label: 'Tam Đảo' },
+    { label: 'Cà Mau' },
+    { label: 'Cần Thơ' },
+    { label: 'Đà Nẵng' },
+    { label: 'Bình Định' },
+    { label: 'Quảng Ngải' },
+    { label: 'Quảng Nam' },
+    { label: 'Nghệ An' },
+    { label: 'Sơn La' },
+    { label: 'Bến Tre' },
+  ];
 
-function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
+  function renderInputComponent(inputProps) {
+    const { classes, inputRef = () => {}, ref, ...other } = inputProps;
 
-  return (
-    <TextField
-      fullWidth
-      InputProps={{
-        inputRef: node => {
-          ref(node);
-          inputRef(node);
-        },
-        classes: {
-          input: classes.input,
-        },
-        disableUnderline: true,
-      }}
-      {...other}
-    />
-  );
-}
+    return (
+      <TextField
+        fullWidth
+        InputProps={{
+          inputRef: node => {
+            ref(node);
+            inputRef(node);
+          },
+          classes: {
+            input: classes.input,
+          },
+          disableUnderline: true,
+        }}
+        {...other}
+      />
+    );
+  }
 
-function renderSuggestion(suggestion, { query }) {
-  const matches = match(suggestion.label, query);
-  const parts = parse(suggestion.label, matches);
-  parts.pop();
-  return (
-    <MenuItem component="div" onClick={() => {}}>
-      <div>
-        {parts.map(part => (
-          //
+  function renderSuggestion(suggestion, { query }) {
+    const matches = match(suggestion.label, query);
+    const parts = parse(suggestion.label, matches);
+    parts.pop();
+    return (
+      <MenuItem
+        component="div"
+        onClick={() => {
+          props.choose();
+        }}
+      >
+        <div>
+          {parts.map(part => (
+            //
 
-          // <span key={part.text} style={{ fontWeight: part.highlight ? 500 : 400 }}>
-          //   {part.text}
-          // </span>
-          <div key={part.text + new Date()}>
-            <SearchItemForCompare />
-          </div>
-        ))}
-      </div>
-    </MenuItem>
-  );
-}
+            // <span key={part.text} style={{ fontWeight: part.highlight ? 500 : 400 }}>
+            //   {part.text}
+            // </span>
+            <div key={part.text + new Date()}>
+              <SearchItemForCompare />
+            </div>
+          ))}
+        </div>
+      </MenuItem>
+    );
+  }
 
-function getSuggestions(value) {
-  const inputValue = deburr(value.trim()).toLowerCase();
-  const inputLength = inputValue.length;
-  let count = 0;
+  function getSuggestions(value) {
+    const inputValue = deburr(value.trim()).toLowerCase();
+    const inputLength = inputValue.length;
+    let count = 0;
 
-  return inputLength === 0
-    ? []
-    : suggestions.filter(suggestion => {
-        const keep =
-          count < 5 && suggestion.label.slice(0, inputLength).toLowerCase() === inputValue;
+    return inputLength === 0
+      ? []
+      : suggestions.filter(suggestion => {
+          const keep =
+            count < 5 && suggestion.label.slice(0, inputLength).toLowerCase() === inputValue;
 
-        if (keep) {
-          count += 1;
-        }
+          if (keep) {
+            count += 1;
+          }
 
-        return keep;
-      });
-}
+          return keep;
+        });
+  }
 
-function getSuggestionValue(suggestion) {
-  return suggestion.label;
-}
+  function getSuggestionValue(suggestion) {
+    return suggestion.label;
+  }
 
-function InputSearchForCompare() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [state, setState] = React.useState({

@@ -8,7 +8,7 @@ import { SmallRoomItem, VideoIntro } from 'components';
 function HomeByArea() {
   const renderRom = () => {
     const result = [];
-    for (let i = 1; i < 33; i++) {
+    for (let i = 1; i < 53; i++) {
       const item = (
         <Grid item md={3} xs={6} lg={3} sm={4} key={i}>
           <SmallRoomItem sale={i % 3 === 0 ? true : false} />

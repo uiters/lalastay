@@ -1,17 +1,14 @@
-/* eslint-disable no-unneeded-ternary */
-/* eslint-disable no-plusplus */
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 import { SmallRoomItem } from 'components';
 
-function RoomViewer(props) {
+function RoomViewer({ tilte, sologen }) {
   const renderRom = () => {
     const result = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 16; i += 1) {
       const item = (
         <Grid item md={3} xs={6} lg={3} sm={4} key={i}>
-          <SmallRoomItem sale={i % 3 === 0 ? true : false} />
+          <SmallRoomItem sale={i % 3 === 0} />
         </Grid>
       );
       result.push(item);
@@ -25,10 +22,10 @@ function RoomViewer(props) {
           <Grid item sm={12}>
             <div style={{ marginBottom: '20px' }}>
               <Box fontWeight={600} fontSize={24} color="#2B2B2B">
-                {props.tilte}
+                {tilte}
               </Box>
               <Box fontWeight={300} fontSize={24} color="rgba(43, 43, 43, 0.8)">
-                {props.sologen}
+                {sologen}
               </Box>
             </div>
           </Grid>

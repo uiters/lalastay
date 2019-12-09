@@ -7256,7 +7256,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
-lodash.throttle@^4.0.0:
+lodash.throttle@^4.0.0, lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
@@ -10059,6 +10059,17 @@ react-id-swiper@^2.4.0:
   dependencies:
     object-assign "^4.1.1"
 
+react-image-gallery@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-0.9.1.tgz#3ac75af700ce671d82aae1e2ad8226c0e1379ad1"
+  integrity sha512-J0ZDp12QwcHxK/De//Cx0lXvkPk2bL2voNm6xmZItCZ5TWTKJyNAa9U/iOtfi/RKJEpSLsTb2kP/4Lr5wgkJZA==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
+    react-swipeable "^5.2.0"
+    resize-observer-polyfill "^1.5.0"
+
 react-images@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-images/-/react-images-1.0.0.tgz#9dcca9e91137c9ad175ba832a965ca1141e6aea8"
@@ -10211,6 +10222,13 @@ react-slick@~0.25.2:
     json2mq "^0.2.0"
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
+
+react-swipeable@^5.2.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-5.5.0.tgz#083300d27ffea96f27b49cee04925151515ae9ba"
+  integrity sha512-izPgNufVnm8zA7jpYhTwWJRfY2KIXUMWas8TcnoPODGA1EpgR5HaaTaR9uxyOgq00DVzOFvtE9IWEaBvtVVheA==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-test-renderer@^16.0.0-0:
   version "16.8.6"

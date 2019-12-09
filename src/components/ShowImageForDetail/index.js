@@ -36,7 +36,7 @@ function ShowImageForDetail() {
   const imgs = [s1, s2, s3, s4, s5, s3, s2, s4, s5];
   const images = [{ src: s1 }, { src: s2 }, { src: s3 }, { src: s4 }, { src: s5 }];
   return (
-    <>
+    <div>
       <div className="conatiner-slie-img">
         <Swiper {...params}>
           {imgs &&
@@ -56,7 +56,7 @@ function ShowImageForDetail() {
           </Modal>
         ) : null}
       </ModalGateway>
-    </>
+    </div>
   );
 }
 

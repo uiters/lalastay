@@ -188,7 +188,7 @@ function SmallRoomItem(props) {
         {props.compare && (
           <div>
             <HighlightOffIcon
-              style={{ right: '0px', position: 'absolute', zIndex: 1001 }}
+              style={{ right: '0px', position: 'absolute', zIndex: 10, fontSize: '28px' }}
               onClick={() => {
                 props.close();
               }}

@@ -24,6 +24,9 @@ const useStyles = makeStyles(() => ({
     height: '100%',
     padding: '10px',
     borderRadius: '50%',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   searchIcon: {
     color: '#FC6C85',

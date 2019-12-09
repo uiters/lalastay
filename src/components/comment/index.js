@@ -30,7 +30,7 @@ function Comment(props) {
                 </div>
               </Box>
               <Box marginLeft={2}>
-                {props.content !== '' && <p>{props.content}</p>}
+                {props.content !== '' && <p style={{ fontSize: '18px' }}>{props.content}</p>}
                 {props.content === '' && (
                   <input className="comment-content" placeholder="Bình luận..." />
                 )}
