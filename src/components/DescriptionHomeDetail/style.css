@@ -66,11 +66,11 @@ a {
   }
 }
 
-.MuiAppBar-colorPrimary{
-  background-color:transparent !important;
+.MuiAppBar-colorPrimary {
+  background-color: transparent !important;
   color: #3a3a32 !important;
 }
 
-.MuiAppBar-colorPrimary{
+.MuiAppBar-colorPrimary {
   box-shadow: none !important;
 }

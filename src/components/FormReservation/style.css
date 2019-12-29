@@ -2,7 +2,6 @@
   width: 100%;
   background-color: #fff;
   border: 4px solid #e9e9e9;
-
 }
 
 ul {
@@ -19,14 +18,12 @@ ul {
   border-radius: 4px;
 }
 
-.magin-15{
+.magin-15 {
   margin: 15px;
-
 }
 
-.magin-15 input ::after{
+.magin-15 input ::after {
   content: 'ahihi';
-
 }
 .date-arrival:after {
   background: url('../../assets/calendar.png') no-repeat !important;
@@ -38,14 +35,13 @@ ul {
   font: normal normal normal 14px/1 FontAwesome;
   right: 22px; */
 }
-.date-arrival{
+.date-arrival {
   position: relative;
 }
-.book-room{
+.book-room {
   padding: 15px;
-  background-color: rgba(253, 136, 156,0.8);
+  background-color: rgba(253, 136, 156, 0.8);
   width: 100%;
   border: none !important;
   color: #fff;
-
 }

@@ -80,7 +80,7 @@ td:nth-child(1) {
   height: 80px;
   border-radius: 50%;
   color: #ffffff;
-  animation:scalebuton ;
+  animation: scalebuton;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
