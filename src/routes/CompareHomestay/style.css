@@ -21,13 +21,7 @@
   display: block !important;
 }
 
-@font-face {
-  font-family: 'Harmonia';
-  src: local('Harmonia') url(../../fonts/Harmonia-Regular.ttf) format('truetype');
-}
-
 .MuiTableCell-root {
-  font-family: 'Harmonia';
   font-size: 20px !important;
   color: rgba(43, 43, 43, 0.8) !important;
 }
@@ -46,7 +40,7 @@
   height: 2px;
   background-color: #c4c4c4;
 }
-.content-compare{
+.content-compare {
   margin-top: 80px;
   text-align: center;
   width: 100%;
@@ -57,8 +51,7 @@
   font-size: 18px;
 }
 
-
-.datcho{
+.datcho {
   width: 350px !important;
   text-align: center !important;
 }
