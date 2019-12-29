@@ -93,3 +93,7 @@ td:nth-child(1) {
     transform: scale(1);
   } */
 }
+
+.compare-now :hover {
+  cursor: pointer;
+}

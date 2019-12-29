@@ -8,8 +8,8 @@ function InformationUserForm() {
     <div style={{ position: 'relative' }}>
       <div className="conatiner-reservation">
         <div style={{ textAlign: 'center' }}>
-          <Box fontSize={25} fontWeight={500}>
-            Để lại thông tin
+          <Box fontSize={20} fontWeight={600}>
+            Đăng kí nhận ngay ưu đãi
           </Box>
         </div>
         <div style={{ textAlign: 'center' }}>
@@ -32,7 +32,7 @@ function InformationUserForm() {
             <li className="magin-15">
               <div>
                 <button className="book-room" type="button" onClick={() => navigate('/payment')}>
-                  Đăng kí
+                  ĐĂNG KÍ
                 </button>
               </div>
             </li>

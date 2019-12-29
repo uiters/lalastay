@@ -32,10 +32,3 @@ ul {
   font: normal normal normal 14px/1 FontAwesome;
   right: 22px; */
 }
-.book-room {
-  padding: 15px;
-  background-color: rgba(253, 136, 156, 0.8);
-  width: 100%;
-  border: none !important;
-  color: #fff;
-}
