@@ -135,6 +135,7 @@ function SmallRoomItem(props) {
 
       <div style={{ padding: '0 4px' }}>
         <Grid container direction="row" justify="space-between" alignItems="center">
+
           <div
             style={{ display: 'flex', alignItems: 'center', fontSize: '18px', fontWeight: '600' }}
           >
@@ -151,10 +152,9 @@ function SmallRoomItem(props) {
               </Box>
             )}
           </div>
-
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <StarIcon style={{ color: '#FC6C85', fontSize: '16px' }} />
+              <StarIcon style={{ color: '#FC6C85', fontSize: '16px' }} 
             </div>
             <div>
               <Box>4.95</Box>
