@@ -204,7 +204,11 @@ function SmallRoomItem(props) {
           <Link to="/home-detail">
             <div
               className="showMore"
-              style={{ webkitBoxOrient: 'vertical', color: 'rgba(43, 43, 43, 0.85)' }}
+              style={{
+                webkitBoxOrient: 'vertical',
+                color: 'rgba(43, 43, 43, 0.85)',
+                paddingLeft: '5px',
+              }}
             >
               {props.tilte}
             </div>
