@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Button } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
@@ -14,6 +14,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import './style.css';
 import RoomIcon from '@material-ui/icons/Room';
 import { navigate } from '@reach/router';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import logo from '../../assets/logo.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -29,6 +30,10 @@ const useStyles = makeStyles(() => ({
     '&:hover': {
       cursor: 'pointer',
     },
+  },
+  avatar: {
+    width: '50px',
+    height: '50px',
   },
   searchIcon: {
     color: '#FC6C85',
@@ -56,6 +61,11 @@ const useStyles = makeStyles(() => ({
   },
   input: {
     paddingLeft: '15px',
+  },
+  format_navbar: {
+    fontSize: '16px',
+    fontWeight: '500',
+    height: '100%',
   },
 }));
 
@@ -253,20 +263,56 @@ function Navbar() {
               </Box>
             </Grid>
           </Grid>
-          <Grid item xs={6} container direction="row" justify="flex-end" alignItems="center">
-            <Button className={classes.button}>Chủ nhà</Button>
-            <Button className={classes.button}>Đăng kí</Button>
-            <Button className={classes.button}>Đăng nhập</Button>
+          <Grid
+            item
+            xs={6}
+            container
+            direction="row"
+            justify="flex-end"
+            alignItems="center"
+            className={classes.format_navbar}
+          >
+            <div className="item-navbar">
+              <div>Khám phá</div>
+            </div>
+            <div className="item-navbar">Đã xem</div>
+            <div className="item-navbar">Giúp đỡ</div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                height: '60px',
+                borderBottom: '2px solid transparent',
+                marginRight: '20px',
+              }}
+            >
+              <Box display="inline">Lyly</Box>
+              <Box className={classes.avatar}>
+                <img
+                  src={logo}
+                  className={classes.logoImg}
+                  alt="img"
+                  onClick={() => navigate('/')}
+                />
+              </Box>
+              <Box display="inline">
+                <ExpandMoreIcon style={{ color: '#969696', fontSize: '16px', marginTop: '10px' }} />
+              </Box>
+            </div>
           </Grid>
         </Grid>
       </nav>
       <nav className="menu-min" style={{ background: '#FFFFFF' }}>
         <Box className="search-container-min">
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+            }}
+          >
             <Box marginTop={1}>
               <MenuIcon style={{ color: '#FC6C85' }} />
             </Box>
-            <Box>
+            <Box style={{ marginTop: '5px' }}>
               <Autosuggest
                 {...autosuggestMinProps}
                 inputProps={{
@@ -305,7 +351,7 @@ function Navbar() {
             </Box>
           </div>
 
-          <Box marginTop={1} marginRight={1}>
+          <Box style={{ marginTop: '5px' }} marginRight={1}>
             <SearchIcon style={{ color: '#FC6C85' }} />
           </Box>
         </Box>
