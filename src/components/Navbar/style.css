@@ -13,7 +13,7 @@
   margin-left: 10px;
   height: 35px;
   /* background-color: rgba(250, 250, 250, 0.7); */
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
   /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); */
   border: 0.5px solid rgba(150, 150, 150, 0.3);
 }
@@ -105,4 +105,9 @@ input:focus {
   color: #fc6c85 !important;
   cursor: pointer;
   border-bottom: 3px solid #fc6c85 !important;
+}
+
+.MuiInputBase-input{
+  font-size: 16px !important;
+  font-family: 'Sarabun', sans-serif !important;
 }
