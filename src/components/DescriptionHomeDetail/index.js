@@ -68,7 +68,13 @@ function DescriptionHomeDetail() {
     <div className="conatiner-description">
       <div className={classes.root}>
         <AppBar position="static">
-          <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
+            variant="scrollable"
+            scrollButtons="auto"
+          >
             <Tab label="Mô tả" {...a11yProps(0)} />
             <Tab label="Tiện nghi" {...a11yProps(1)} />
             <Tab label="Bình luận" {...a11yProps(2)} />
