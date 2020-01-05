@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Box } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -11,12 +11,12 @@ import PersonIcon from '@material-ui/icons/Person';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
-import GavelIcon from '@material-ui/icons/Gavel';
+// import GavelIcon from '@material-ui/icons/Gavel';
 import HomeIcon from '@material-ui/icons/Home';
-import garden from '../../assets/garden.png';
 import parking from '../../assets/parking.png';
 import bando from '../../assets/bando.png';
 import Comments from '../../routes/HomeDetail/components/Comments';
+import { Rating } from '../index';
 
 import './style.css';
 
@@ -58,7 +58,7 @@ const useStyles = makeStyles(() => ({
 function DescriptionHomeDetail() {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -72,6 +72,7 @@ function DescriptionHomeDetail() {
             <Tab label="Mô tả" {...a11yProps(0)} />
             <Tab label="Tiện nghi" {...a11yProps(1)} />
             <Tab label="Bình luận" {...a11yProps(2)} />
+            <Tab label="Đánh giá" {...a11yProps(3)} />
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
@@ -111,18 +112,22 @@ function DescriptionHomeDetail() {
               <Grid item xs={9} style={{ lineHeight: '30px' }}>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <WifiIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
+                    <WifiIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline">Wifi miễn phí</Box>
                 </Box>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <img alt="img" src={garden} style={{ marginRight: '5px' }} />
+                    <HomeIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline">Có sân vườn</Box>
                 </Box>
                 <Box style={{ display: 'flex' }}>
-                  <Box display="inline">
+                  <Box display="inline" style={{ marginLeft: '10px', marginRight: '8px' }}>
                     <img alt="img" src={parking} style={{ marginRight: '5px' }} />
                   </Box>
                   <Box display="inline" marginBottom={1}>
@@ -145,7 +150,9 @@ function DescriptionHomeDetail() {
               <Grid item xs={9}>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <PersonIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
+                    <PersonIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline"> 1 người</Box>
                 </Box>
@@ -165,7 +172,9 @@ function DescriptionHomeDetail() {
               <Grid item xs={9}>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <AttachMoneyIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
+                    <AttachMoneyIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline"> 2,340,000 VNĐ/ ngày</Box>
                 </Box>
@@ -177,10 +186,7 @@ function DescriptionHomeDetail() {
                 <Box fontWeight={600}>Thông tin chi tiết</Box>
               </Grid>
               <Grid item xs={9}>
-                <Box style={{ display: 'flex' }}>
-                  <Box display="inline">
-                    <HomeIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
-                  </Box>
+                <Box style={{ display: 'flex', marginLeft: '40px' }}>
                   <Box display="inline">
                     <Box>1 phòng khách</Box>
                     <Box>1 phòng tắm</Box>
@@ -202,13 +208,17 @@ function DescriptionHomeDetail() {
               <Grid item xs={9}>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <PhoneIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
+                    <PhoneIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline">0981853641</Box>
                 </Box>
                 <Box style={{ display: 'flex' }}>
                   <Box display="inline">
-                    <EmailIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
+                    <EmailIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
                   </Box>
                   <Box display="inline">16521214@gmail.com</Box>
                 </Box>
@@ -220,10 +230,12 @@ function DescriptionHomeDetail() {
                 <Box fontWeight={600}>Quy định</Box>
               </Grid>
               <Grid item xs={9}>
-                <Box style={{ display: 'flex' }}>
-                  <Box display="inline">
-                    <GavelIcon style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px' }} />
-                  </Box>
+                <Box style={{ display: 'flex', marginLeft: '40px' }}>
+                  {/* <Box display="inline">
+                    <GavelIcon
+                      style={{ color: 'rgb(151, 8, 204,.7)', marginRight: '5px', width: '35px' }}
+                    />
+                  </Box> */}
                   <Box display="inline">
                     Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ
                     sáng. Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
@@ -247,6 +259,9 @@ function DescriptionHomeDetail() {
         </TabPanel>
         <TabPanel value={value} index={2}>
           <Comments />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <Rating />
         </TabPanel>
       </div>
     </div>
