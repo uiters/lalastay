@@ -1,6 +1,7 @@
 @media (max-width: 375px) {
   .loading {
     margin-left: 5px !important;
+    width: 190px !important;
   }
 }
 
