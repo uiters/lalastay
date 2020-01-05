@@ -7,6 +7,7 @@ import { Box, Container, Grid } from '@material-ui/core';
 import { navigate } from '@reach/router';
 import WifiIcon from '@material-ui/icons/Wifi';
 import StarIcon from '@material-ui/icons/Star';
+import HomeIcon from '@material-ui/icons/Home';
 import ss1 from '../../assets/ss1.jpg';
 import ss2 from '../../assets/ss2.jpg';
 import ss3 from '../../assets/ss3.jpg';
@@ -151,11 +152,11 @@ function CompareHomestaty() {
               </Swiper>
             </div>
           </div>
-          <Box fontSize={25}>Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2</Box>
+          <Box fontSize={26} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+            Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2
+          </Box>
           <Box fontSize={20}>
-            <i>
-              <u>Đà Lạt, Lâm Đồng Việt Nam</u>
-            </i>
+            <i>Đà Lạt, Lâm Đồng Việt Nam</i>
           </Box>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
             <button
@@ -224,11 +225,11 @@ function CompareHomestaty() {
                   <img className="slide-under swiper-slide" src={ss10} alt="img" />
                 </Swiper>
               </div>
-              <Box fontSize={25}>Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2</Box>
+              <Box fontSize={26} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+                Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2
+              </Box>
               <Box fontSize={20}>
-                <i>
-                  <u>Đà Lạt, Lâm Đồng Việt Nam</u>
-                </i>
+                <i>Đà Lạt, Lâm Đồng Việt Nam</i>
               </Box>
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
                 <button
@@ -245,229 +246,263 @@ function CompareHomestaty() {
         <Grid item md={1} />
       </Grid>
       <div className="content-compare">
-        <div style={{ display: 'flex', alignItems: 'center', margin: '15px 0px' }}>
-          <Box marginRight={3}>
-            <Box display="inline">
-              <StarIcon style={{ color: '#9708CC', fontSize: '16px' }} />
-            </Box>
-            <Box display="inline">4.95</Box>
-          </Box>
-          <Box className="divde_200 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Đánh giá
-          </Box>
-          <Box className="divde_200 " />
-          <Box>
-            <Box display="inline" marginLeft={3}>
-              <StarIcon style={{ color: '#9708CC', fontSize: '16px' }} />
-            </Box>
-            <Box display="inline">4.95</Box>
-          </Box>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
-            backgroundColor: 'rgba(196, 196, 196, 0.15)',
-            width: '100%',
-            justifyContent: 'center',
-          }}
-        >
-          <Box marginRight={3}>
-            <Box style={{ display: 'flex' }}>
-              <Box>
-                <WifiIcon style={{ color: '#9708CC', marginRight: '5px' }} />
-              </Box>
-              <Box>Wifi miễn phí</Box>
-            </Box>
-            <Box style={{ display: 'flex' }}>
+        <Grid container style={{ padding: '15px 0' }}>
+          <Grid item xs={4}>
+            <Box>
               <Box display="inline">
-                <img alt="img" src={garden} style={{ marginRight: '5px' }} />
+                <StarIcon style={{ color: '#9708CC', fontSize: '16px' }} />
               </Box>
-              <Box display="inline">Có sân vườn</Box>
+              <Box display="inline">4.95</Box>
             </Box>
-            <Box style={{ display: 'flex' }}>
-              <Box>
-                <img alt="img" src={parking} style={{ marginRight: '5px' }} />
-              </Box>
-              <Box marginBottom={1}>Có chỗ đậu xe</Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+              Đánh giá
             </Box>
-          </Box>
-          <Box className="divde_150 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Tiện nghi
-          </Box>
-          <Box className="divde_150 " />
-          <Box marginLeft={3}>
-            <Box style={{ display: 'flex' }}>
-              <Box>
-                <WifiIcon style={{ color: '#9708CC', marginRight: '5px' }} />
-              </Box>
-              <Box>Wifi miễn phí</Box>
-            </Box>
-            {/* <Box style={{ display: 'flex' }}>
+          </Grid>
+          <Grid item xs={4}>
+            <Box>
               <Box display="inline">
-                <img alt="img" src={garden} style={{ marginRight: '5px' }} />
+                <StarIcon style={{ color: '#9708CC', fontSize: '16px' }} />
               </Box>
-              <Box display="inline">Có sân vườn</Box>
-            </Box> */}
-            <Box style={{ display: 'flex' }}>
-              <Box>
-                <img alt="img" src={parking} style={{ marginRight: '5px' }} />
-              </Box>
-              <Box marginBottom={1}>Có chỗ đậu xe</Box>
+              <Box display="inline">4.95</Box>
             </Box>
-          </Box>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '15px 0px' }}>
-          <Box marginRight={3}>
-            <Box>2,345,000 VNĐ/ngày</Box>
-          </Box>
-          <Box className="divde_200 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Giá
-          </Box>
-          <Box className="divde_200 " />
-          <Box>
-            <Box>2,345,000 VNĐ/ngày</Box>
-          </Box>
-        </div>
-        <div
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
-            backgroundColor: 'rgba(196, 196, 196, 0.15)',
-            width: '100%',
-            justifyContent: 'center',
+            backgroundColor: 'rgba(150, 150, 150, 0.05)',
+            padding: '15px 0',
           }}
         >
-          <Box marginRight={3}>
-            <Box> 3 người</Box>
-          </Box>
-          <Box className="divde_150 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Số khách
-          </Box>
-          <Box className="divde_150 " />
-          <Box display="inline" marginLeft={3}>
-            <Box>4 người</Box>
-          </Box>
-        </div>
-        <div
+          <Grid item xs={4}>
+            <Grid container spacing={2}>
+              <Grid item xs={4}>
+                <Grid container direction="column" justify="flex-start">
+                  <Box>
+                    <WifiIcon style={{ color: '#9708CC' }} />
+                  </Box>
+                  <Box>
+                    <HomeIcon style={{ color: '#9708CC' }} />
+                  </Box>
+                  <Box>
+                    <img alt="img" src={parking} />
+                  </Box>
+                </Grid>
+              </Grid>
+              <Grid item xs={8}>
+                <Grid container direction="column" justify="flex-start" alignItems="flex-start">
+                  <Box>Wifi miễn phí</Box>
+                  <Box>Có sân vườn</Box>
+                  <Box marginBottom={1}>Có chỗ đậu xe</Box>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+              style={{ height: '100%' }}
+            >
+              <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+                Tiện nghi
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid container>
+              <Grid item xs={4}>
+                <Grid container direction="column" justify="flex-start">
+                  <Box>
+                    <WifiIcon style={{ color: '#9708CC' }} />
+                  </Box>
+                  <Box>
+                    <HomeIcon style={{ color: '#9708CC' }} />
+                  </Box>
+
+                  <Box>
+                    <img alt="img" src={parking} />
+                  </Box>
+                </Grid>
+              </Grid>
+              <Grid item xs={8}>
+                <Grid container direction="column" justify="flex-start" alignItems="flex-start">
+                  <Box>Wifi miễn phí</Box>
+                  <Box>Có sân vườn</Box>
+                  <Box marginBottom={1}>Có chỗ đậu xe</Box>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container style={{ padding: '15px 0' }}>
+          <Grid item xs={4}>
+            <Box marginRight={3}>
+              <Box>2,345,000 VNĐ/ngày</Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+              style={{ height: '100%' }}
+            >
+              <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+                Giá
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Box>
+              <Box>2,345,000 VNĐ/ngày</Box>
+            </Box>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
+            backgroundColor: 'rgba(150, 150, 150, 0.05)',
+            padding: '15px 0',
           }}
         >
-          <Box marginRight={3}>
-            <Box>Nhà riêng</Box>
-          </Box>
-          <Box className="divde_200 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Loại homestay
-          </Box>
-          <Box className="divde_200 " />
-          <Box marginLeft={3}>
-            <Box>Khách sạn</Box>
-          </Box>
-        </div>
-        <div
+          <Grid item xs={4}>
+            <Box>
+              <Box> 3 người</Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+              Số khách
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box>
+              <Box>4 người</Box>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container style={{ padding: '15px 0' }}>
+          <Grid item xs={4}>
+            <Box marginRight={3}>
+              <Box>Nhà riêng</Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+              Loại homestay
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box marginLeft={3}>
+              <Box>Khách sạn</Box>
+            </Box>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
-            backgroundColor: 'rgba(196, 196, 196, 0.15)',
-            width: '100%',
-            justifyContent: 'center',
+            backgroundColor: 'rgba(150, 150, 150, 0.05)',
+            padding: '15px 0',
           }}
         >
-          <Box marginRight={3}>
-            <Box>2 km</Box>
-          </Box>
-          <Box className="divde_200 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Khoảng cách từ bạn
-          </Box>
-          <Box className="divde_200 " />
-          <Box marginLeft={3}>
-            <Box> 3 km</Box>
-          </Box>
-        </div>
-        <div
+          <Grid item xs={4}>
+            {' '}
+            <Box marginRight={3}>
+              <Box>2 km</Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+              Khoảng cách từ bạn
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box marginLeft={3}>
+              <Box> 3 km</Box>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container style={{ padding: '15px 0' }}>
+          <Grid item xs={4}>
+            <Box marginRight={3}>
+              <Box>Thung lũng tình yêu, Quảng trường, chợ đêm</Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+              Gần với
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Box marginLeft={3}>
+              <Box>Cáp treo, Sân bay, núi langbian, Thác Preen</Box>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid
+          container
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
-            width: '100%',
-            justifyContent: 'center',
+            backgroundColor: 'rgba(150, 150, 150, 0.05)',
+            padding: '15px 0',
           }}
         >
-          <Box marginRight={3}>
-            <Box>Thung lũng tình yêu, Quảng trường, chợ đêm</Box>
-          </Box>
-          <Box className="divde_200 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Gần với
-          </Box>
-          <Box className="divde_200 " />
-          <Box marginLeft={3}>
-            <Box>Cáp treo, Sân bay, núi langbian, Thác Preen</Box>
-          </Box>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '15px 0px',
-            width: '100%',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(196, 196, 196, 0.15)',
-          }}
-        >
-          <Box marginRight={3}>
-            Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-            Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homesta
-          </Box>
-          <Box className="divde_150 " />
-          <Box fontSize={24} marginLeft={3} marginRight={3}>
-            Quy định
-          </Box>
-          <Box className="divde_150 " />
-          <Box marginLeft={3}>
-            Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-            Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
-          </Box>
-        </div>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-          marginBottom: '50px',
-        }}
-      >
-        <div>
-          <button
-            className="variant-button datcho"
-            type="button"
-            onClick={() => navigate('/payment')}
-          >
-            ĐẶT NGAY
-          </button>
-        </div>
-        <div>
-          <button
-            className="variant-button datcho"
-            type="button"
-            onClick={() => navigate('/payment')}
-          >
-            ĐẶT NGAY
-          </button>
-        </div>
+          <Grid item xs={4}>
+            <Box marginRight={3}>
+              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
+              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homesta
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+              style={{ height: '100%' }}
+            >
+              <Box fontSize={20} style={{ color: '#2B2B2B', fontWeight: 'bold' }}>
+                Quy định
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Box marginLeft={3}>
+              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
+              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container style={{ margin: '20px 0' }}>
+          <Grid item xs={4}>
+            <button
+              className="variant-button datcho"
+              type="button"
+              onClick={() => navigate('/payment')}
+            >
+              ĐẶT NGAY
+            </button>
+          </Grid>
+          <Grid item xs={4} />
+          <Grid item xs={4}>
+            <button
+              className="variant-button datcho"
+              type="button"
+              onClick={() => navigate('/payment')}
+            >
+              ĐẶT NGAY
+            </button>
+          </Grid>
+        </Grid>
       </div>
     </Container>
   );

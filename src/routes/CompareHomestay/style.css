@@ -52,6 +52,6 @@
 }
 
 .datcho {
-  width: 350px !important;
   text-align: center !important;
+  width: 100%;
 }
