@@ -182,7 +182,7 @@ function InputSearchForCompare(props) {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
-        <Box display="inline" className="search-container" width={450}>
+        <Box display="inline" className="search-container" width={400}>
           <Autosuggest
             {...autosuggestProps}
             inputProps={{
