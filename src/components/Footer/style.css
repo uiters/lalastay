@@ -2,7 +2,7 @@
   font-size: 20px;
   margin-right: 30px;
   margin-bottom: 20px;
-  color: #999;
+  color: #000000;
 }
 .flex-content {
   float: left;
@@ -15,7 +15,7 @@
 .icon-contact {
   font-size: 25px;
   margin-right: 20px;
-  color: #999 !important;
+  color: #000000 !important;
 }
 .text-end {
   font-size: 12px;
@@ -28,10 +28,11 @@
 
 .container-footer {
   padding: 30px;
-  background-color: #000000;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   width: 100% !important;
   margin-top: 15px;
+  /* border-top: 1px solid #999; */
 }
 
 .end-footer {

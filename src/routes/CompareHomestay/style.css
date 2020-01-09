@@ -12,6 +12,7 @@
 .slide-under {
   width: 100px !important;
   height: 100px !important;
+  border-radius: 5px;
 }
 
 .container-show-image:hover .swiper-button-next {
@@ -71,7 +72,7 @@
     display: none !important;
   }
   .container-show-image > .swiper-container {
-    height: 150px !important;
+    height: 100px !important;
   }
   .content-compare {
     font-size: 14px !important;
@@ -89,13 +90,22 @@
     display: none !important;
   }
   .container-show-image > .swiper-container {
-    height: 150px !important;
+    height: 90px !important;
   }
   .content-compare {
     font-size: 14px !important;
   }
   .content-compare {
     margin-top: 20px !important;
+  }
+  .variant-button {
+    padding: 1px 5px !important
+  }
+}
+
+@media (min-width: 359px) {
+  .container-show-image > .swiper-container {
+    height: 110px !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1022px) {
@@ -115,8 +125,11 @@
     margin-top: 20px !important;
   }
   .container-show-image > .swiper-container {
-    height: 280px !important;
+    height: 210px !important;
   }
+  .variant-button {
+    padding: 5px 10px !important;
+}
 }
 @media (min-width: 1023px) {
   .icon-left {
@@ -126,7 +139,7 @@
     margin-right: -65px !important;
   }
   .container-show-image > .swiper-container {
-    height: 350px !important;
+    height: 300px !important;
   }
   .content-compare {
     font-size: 18px !important;
@@ -134,9 +147,12 @@
   .content-compare {
     margin-top: 60px !important;
   }
+  .variant-button {
+    padding: 6px 20px !important;
+  }
 }
 
-.cancel :hover{
+.cancel :hover {
   cursor: pointer;
 }
 .container-show-image .swiper-button-next {

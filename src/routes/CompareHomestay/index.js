@@ -212,8 +212,7 @@ function CompareHomestaty(props) {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        borderTopLeftRadius: '4px',
-                        borderTopRightRadius: '4px',
+                        borderRadius: '4px',
                       }}
                       alt="img"
                     />
@@ -224,8 +223,7 @@ function CompareHomestaty(props) {
                       style={{
                         width: '100%',
                         height: '100%',
-                        borderTopLeftRadius: '4px',
-                        borderTopRightRadius: '4px',
+                        borderRadius: '4px',
                         objectFit: 'cover',
                       }}
                       alt="img"
@@ -237,8 +235,7 @@ function CompareHomestaty(props) {
                       style={{
                         width: '100%',
                         height: '100%',
-                        borderTopLeftRadius: '4px',
-                        borderTopRightRadius: '4px',
+                        borderRadius: '4px',
                         objectFit: 'cover',
                       }}
                       alt="img"
@@ -250,8 +247,7 @@ function CompareHomestaty(props) {
                       style={{
                         width: '100%',
                         height: '100%',
-                        borderTopLeftRadius: '4px',
-                        borderTopRightRadius: '4px',
+                        borderRadius: '4px',
                         objectFit: 'cover',
                       }}
                       alt="img"
@@ -263,19 +259,39 @@ function CompareHomestaty(props) {
                 <>
                   <Swiper {...gallerySwiperParams}>
                     <div className="swiper-slide ">
-                      <img style={{ width: '100%', height: '100%' }} src={ss1} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss1}
+                        alt="img"
+                      />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss2} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss2}
+                        alt="img"
+                      />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss3} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss3}
+                        alt="img"
+                      />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss4} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss4}
+                        alt="img"
+                      />
                     </div>
                     <div>
-                      <img style={{ width: '100%', height: '100%' }} src={ss5} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss5}
+                        alt="img"
+                      />
                     </div>
                   </Swiper>
                   <div className="container-thum">
@@ -351,8 +367,7 @@ function CompareHomestaty(props) {
                           width: '100%',
                           height: '100%',
                           objectFit: 'cover',
-                          borderTopLeftRadius: '4px',
-                          borderTopRightRadius: '4px',
+                          borderRadius: '4px',
                         }}
                         alt="img"
                       />
@@ -363,8 +378,7 @@ function CompareHomestaty(props) {
                         style={{
                           width: '100%',
                           height: '100%',
-                          borderTopLeftRadius: '4px',
-                          borderTopRightRadius: '4px',
+                          borderRadius: '4px',
                           objectFit: 'cover',
                         }}
                         alt="img"
@@ -376,8 +390,7 @@ function CompareHomestaty(props) {
                         style={{
                           width: '100%',
                           height: '100%',
-                          borderTopLeftRadius: '4px',
-                          borderTopRightRadius: '4px',
+                          borderRadius: '4px',
                           objectFit: 'cover',
                         }}
                         alt="img"
@@ -389,8 +402,7 @@ function CompareHomestaty(props) {
                         style={{
                           width: '100%',
                           height: '100%',
-                          borderTopLeftRadius: '4px',
-                          borderTopRightRadius: '4px',
+                          borderRadius: '4px',
                           objectFit: 'cover',
                         }}
                         alt="img"
@@ -402,33 +414,73 @@ function CompareHomestaty(props) {
                   <>
                     <Swiper {...seGallerySwiperParams}>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss6}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss7}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss8}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss9}
+                          alt="img"
+                        />
                       </div>
                       <div>
-                        <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss10}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide" />
-                      <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                      <img
+                        style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                        src={ss6}
+                        alt="img"
+                      />
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss7}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss8}
+                          alt="img"
+                        />
                       </div>
                       <div className="swiper-slide">
-                        <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss9}
+                          alt="img"
+                        />
                       </div>
                       <div>
-                        <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                        <img
+                          style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                          src={ss10}
+                          alt="img"
+                        />
                       </div>
                     </Swiper>
                     <div className="container-thum">
@@ -521,28 +573,6 @@ function CompareHomestaty(props) {
             }}
           >
             <Grid item xs={5} md={4}>
-              {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '15px' : '0px' }}>
-              <Grid item md={4}>
-                <Grid container direction="column" justify="flex-start">
-                  <Box>
-                    <WifiIcon style={{ color: '#9708CC' }} className="icon-left" />
-                  </Box>
-                  <Box>
-                    <HomeIcon style={{ color: '#9708CC' }} className="icon-left" />
-                  </Box>
-                  <Box>
-                    <img alt="img" src={parking} className="icon-left" />
-                  </Box>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} md={8}>
-                <Grid container direction="column" justify="flex-start" alignItems="flex-start">
-                  <Box style={{ marginBottom: '5px' }}>Wifi miễn phí</Box>
-                  <Box style={{ marginBottom: '8px' }}>Có sân vườn</Box>
-                  <Box marginBottom={1}>Có chỗ đậu xe</Box>
-                </Grid>
-              </Grid>
-            </Grid> */}
               <Grid>
                 <Box>Wifi miễn phí</Box>
                 <Box>Có sân vườn</Box>
@@ -568,29 +598,6 @@ function CompareHomestaty(props) {
               </Grid>
             </Grid>
             <Grid item xs={5} md={4}>
-              {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '10px' : '0px' }}>
-              <Grid item md={4}>
-                <Grid container direction="column" justify="flex-start">
-                  <Box>
-                    <WifiIcon style={{ color: '#9708CC' }} className="icon-right" />
-                  </Box>
-                  <Box>
-                    <HomeIcon style={{ color: '#9708CC' }} className="icon-right" />
-                  </Box>
-
-                  <Box>
-                    <img alt="img" src={parking} className="icon-right" />
-                  </Box>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} md={8}>
-                <Grid container direction="column" justify="flex-start" alignItems="flex-start">
-                  <Box style={{ marginBottom: '4px' }}>Wifi miễn phí</Box>
-                  <Box style={{ marginBottom: '5px' }}>Có sân vườn</Box>
-                  <Box marginBottom={1}>Có chỗ đậu xe</Box>
-                </Grid>
-              </Grid>
-            </Grid> */}
               <Grid>
                 <Box>Wifi miễn phí</Box>
                 <Box>Có sân vườn</Box>
@@ -728,7 +735,7 @@ function CompareHomestaty(props) {
             }}
           >
             <Grid item xs={5} md={4}>
-              <Box marginRight={props.width === 'xs' ? 1 : 3}>
+              <Box marginRight={props.width === 'xs' ? 1 : 3} style={{ textAlign: 'justify' }}>
                 Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
                 Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homesta
               </Box>
@@ -750,7 +757,7 @@ function CompareHomestaty(props) {
               </Grid>
             </Grid>
             <Grid item xs={5} md={4}>
-              <Box marginLeft={props.width === 'xs' ? 1 : 3}>
+              <Box marginLeft={props.width === 'xs' ? 1 : 3} style={{ textAlign: 'justify' }}>
                 Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
                 Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
               </Box>

@@ -214,7 +214,6 @@ function SmallRoomItem(props) {
             <div style={{ width: '25px', display: 'flex' }}>
               <AttachMoneyIcon style={{ color: 'rgba(151,8,204,0.8)', fontSize: '22px' }} />
             </div>
-            {console.log('kiem tra', props.width)}
             <Box color="rgba(43, 43, 43, 0.8)">
               1.450k{' '}
               {props.width === 'xs' || props.width === 'sm' || props.width === 'md' ? '/đ' : '/đêm'}
