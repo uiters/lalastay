@@ -99,7 +99,7 @@
     margin-top: 20px !important;
   }
   .variant-button {
-    padding: 1px 5px !important
+    padding: 1px 5px !important;
   }
 }
 
@@ -129,7 +129,7 @@
   }
   .variant-button {
     padding: 5px 10px !important;
-}
+  }
 }
 @media (min-width: 1023px) {
   .icon-left {

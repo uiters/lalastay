@@ -183,8 +183,8 @@ only screen and (min-device-pixel-ratio : 1.5) {
 }
 
 .compare-function {
-  color: #3f8fbc;
-  text-align: center;
+  color: #FD889C;
+  /* text-align: center; */
 }
 
 .compare-function:hover {
