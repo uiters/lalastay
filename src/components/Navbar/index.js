@@ -1,8 +1,11 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-unneeded-ternary */
 import React from 'react';
 import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
+import { useSelector } from 'react-redux';
 import parse from 'autosuggest-highlight/parse';
 import deburr from 'lodash/deburr';
 import TextField from '@material-ui/core/TextField';
@@ -11,6 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Popper from '@material-ui/core/Popper';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import withWidth from '@material-ui/core/withWidth';
 import './style.css';
 import RoomIcon from '@material-ui/icons/Room';
 import { navigate } from '@reach/router';
@@ -151,8 +155,9 @@ function getSuggestionValue(suggestion) {
   return suggestion.label;
 }
 
-function Navbar() {
+function Navbar(props) {
   const classes = useStyles();
+  const status = useSelector(state => state.repo);
   // const opacity = props.opacity;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorElMin, setAnchorElMin] = React.useState(null);
@@ -207,7 +212,12 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display:
+          status === true && (props.width === 'xs' || props.width === 'sm') ? 'none' : 'block',
+      }}
+    >
       <nav className="menu" style={{ background: '#FFFFFF' }}>
         <Grid container direction="row" justify="space-between" alignItems="center">
           <Grid item xs={6}>
@@ -360,4 +370,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default withWidth()(Navbar);

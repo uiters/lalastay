@@ -78,7 +78,6 @@
   }
   .content-compare {
     margin-top: 20px !important;
-
   }
 }
 
@@ -97,7 +96,6 @@
   }
   .content-compare {
     margin-top: 20px !important;
-
   }
 }
 @media (min-width: 768px) and (max-width: 1022px) {
@@ -115,7 +113,9 @@
   }
   .content-compare {
     margin-top: 20px !important;
-
+  }
+  .container-show-image > .swiper-container {
+    height: 280px !important;
   }
 }
 @media (min-width: 1023px) {
@@ -133,10 +133,12 @@
   }
   .content-compare {
     margin-top: 60px !important;
-
   }
 }
 
+.cancel :hover{
+  cursor: pointer;
+}
 .container-show-image .swiper-button-next {
   width: 26px !important;
   height: 26px !important;
@@ -164,4 +166,3 @@
 .container-show-image .swiper-button-prev {
   background-size: 13px !important;
 }
-

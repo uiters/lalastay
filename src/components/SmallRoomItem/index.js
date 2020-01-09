@@ -1,5 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { compareAction } from 'models/repo/actions';
 import { Box, Grid } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
 import Swiper from 'react-id-swiper';
@@ -23,6 +25,7 @@ import ss8 from '../../assets/ss8.jpg';
 import ss9 from '../../assets/ss9.jpg';
 
 function SmallRoomItem(props) {
+  const dispatch = useDispatch();
   useEffect(() => {
     try {
       // trying to use new API - https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
@@ -211,11 +214,14 @@ function SmallRoomItem(props) {
             <div style={{ width: '25px', display: 'flex' }}>
               <AttachMoneyIcon style={{ color: 'rgba(151,8,204,0.8)', fontSize: '22px' }} />
             </div>
-            <Box color="rgba(43, 43, 43, 0.8)">1.450k {props.width === 'xs' ? '' : '/đêm'}</Box>
+            {console.log('kiem tra', props.width)}
+            <Box color="rgba(43, 43, 43, 0.8)">
+              1.450k{' '}
+              {props.width === 'xs' || props.width === 'sm' || props.width === 'md' ? '/đ' : '/đêm'}
+            </Box>
             {props.sale === true && (
               <Box display="inline" className="check-show-sale" fontWeight={600}>
                 <strike style={{ marginLeft: '5px', color: 'rgba(43, 43, 43, 0.6)' }}>
-                  {' '}
                   1.000k
                 </strike>
               </Box>
@@ -251,7 +257,13 @@ function SmallRoomItem(props) {
           </Link>
         </Box>
         {props.compareShow && (
-          <Box className="compare-function" onClick={() => navigate('/compare-homestay')}>
+          <Box
+            className="compare-function"
+            onClick={() => {
+              dispatch(compareAction(true));
+              navigate('/compare-homestay');
+            }}
+          >
             So sánh với homestay này
           </Box>
         )}

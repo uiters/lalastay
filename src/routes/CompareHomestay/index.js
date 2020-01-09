@@ -7,6 +7,7 @@ import { InputSearchForCompare, withLayout } from 'components';
 import Swiper from 'react-id-swiper';
 import { Box, Container, Grid } from '@material-ui/core';
 import { navigate } from '@reach/router';
+
 import WifiIcon from '@material-ui/icons/Wifi';
 import StarIcon from '@material-ui/icons/Star';
 import HomeIcon from '@material-ui/icons/Home';
@@ -23,6 +24,7 @@ import ss9 from '../../assets/ss9.jpg';
 import ss10 from '../../assets/ss10.jpg';
 import garden from '../../assets/garden.png';
 import parking from '../../assets/parking.png';
+import cancel from '../../assets/cancel.png';
 
 import './style.css';
 
@@ -144,7 +146,7 @@ function CompareHomestaty(props) {
   };
 
   return (
-    <Container>
+    <>
       <div style={{ display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none' }}>
         <div
           style={{
@@ -158,162 +160,35 @@ function CompareHomestaty(props) {
           }}
         >
           <div>So sánh homestay</div>
-          <div style={{ fontSize: '20px' }}>x</div>
+          <div>
+            <img
+              alt="img"
+              className="cancel"
+              src={cancel}
+              onClick={() => navigate('/home-detail')}
+            />
+          </div>
         </div>
       </div>
-      <div style={{ display: props.width === 'xs' ? 'none' : 'block' }}>
-        <div style={{ height: '50px' }} />
-        <Box fontSize={32} fontWeight="bold">
-          So sánh homestay
-        </Box>
-        <InputSearchForCompare choose={chooseHome} />
-      </div>
+      <Container>
+        <div style={{ display: props.width === 'xs' || props.width === 'sm' ? 'none' : 'block' }}>
+          <div style={{ height: '50px' }} />
+          <Box fontSize={32} fontWeight="bold">
+            So sánh homestay
+          </Box>
+          <InputSearchForCompare choose={chooseHome} />
+        </div>
 
-      {/* slide so sánh hai home stay */}
-      <Grid
-        direction="row"
-        container
-        justify="center"
-        alignItems="center"
-        spacing={props.width === 'xs' || props.width === 'sm' ? 2 : 10}
-      >
-        {/* <Grid item md={1} xs={1} /> */}
-        <Grid item md={6} xs={6}>
-          <div className="container-show-image">
-            <div
-              style={{ display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none' }}
-            >
-              <Box
-                fontSize={props.width === 'xs' ? 14 : 26}
-                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-              >
-                CAMELLIA 2 by SONG CAT HOME
-              </Box>
-              <Box fontSize={props.width === 'xs' ? 12 : 20}>
-                <i>Đà Lạt, Lâm Đồng Việt Nam</i>
-              </Box>
-            </div>
-            {(props.width === 'xs' || props.width === 'sm') && (
-              <Swiper {...params} style={{ width: '100%', height: '100%' }}>
-                <div>
-                  <img
-                    src={imgs[Math.floor(Math.random() * 8)]}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      borderTopLeftRadius: '4px',
-                      borderTopRightRadius: '4px',
-                    }}
-                    alt="img"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={imgs[Math.floor(Math.random() * 8)]}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderTopLeftRadius: '4px',
-                      borderTopRightRadius: '4px',
-                      objectFit: 'cover',
-                    }}
-                    alt="img"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={imgs[Math.floor(Math.random() * 8)]}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderTopLeftRadius: '4px',
-                      borderTopRightRadius: '4px',
-                      objectFit: 'cover',
-                    }}
-                    alt="img"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={imgs[Math.floor(Math.random() * 8)]}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderTopLeftRadius: '4px',
-                      borderTopRightRadius: '4px',
-                      objectFit: 'cover',
-                    }}
-                    alt="img"
-                  />
-                </div>
-              </Swiper>
-            )}
-            {props.width !== 'xs' && props.width !== 'sm' && (
-              <>
-                <Swiper {...gallerySwiperParams}>
-                  <div className="swiper-slide ">
-                    <img style={{ width: '100%', height: '100%' }} src={ss1} alt="img" />
-                  </div>
-                  <div className="swiper-slide">
-                    <img style={{ width: '100%', height: '100%' }} src={ss2} alt="img" />
-                  </div>
-                  <div className="swiper-slide">
-                    <img style={{ width: '100%', height: '100%' }} src={ss3} alt="img" />
-                  </div>
-                  <div className="swiper-slide">
-                    <img style={{ width: '100%', height: '100%' }} src={ss4} alt="img" />
-                  </div>
-                  <div>
-                    <img style={{ width: '100%', height: '100%' }} src={ss5} alt="img" />
-                  </div>
-                </Swiper>
-                <div className="container-thum">
-                  <Swiper {...thumbnailSwiperParams}>
-                    <img
-                      className="slide-under swiper-slide swiper-slide-active"
-                      src={ss1}
-                      alt="img"
-                    />
-
-                    <img className="slide-under swiper-slide" src={ss2} alt="img" />
-
-                    <img className="slide-under swiper-slide" src={ss3} alt="img" />
-
-                    <img className="slide-under swiper-slide" src={ss4} alt="img" />
-
-                    <img className="slide-under swiper-slide" src={ss5} alt="img" />
-                  </Swiper>
-                </div>
-              </>
-            )}
-          </div>
-          <div style={{ display: props.width !== 'xs' && props.width !== 'sm' ? 'block' : 'none' }}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 26}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-            >
-              Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2
-            </Box>
-            <Box fontSize={props.width === 'xs' ? 12 : 20}>
-              <i>Đà Lạt, Lâm Đồng Việt Nam</i>
-            </Box>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-            <button
-              className="variant-button"
-              type="button"
-              style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
-              onClick={() => navigate('/home-detail')}
-            >
-              CHI TIẾT {'>>'}
-            </button>
-          </div>
-        </Grid>
-        {/* <Grid item md={2} /> */}
-        <Grid item md={6} xs={6}>
-          {!close && (
+        {/* slide so sánh hai home stay */}
+        <Grid
+          direction="row"
+          container
+          justify="center"
+          alignItems="center"
+          spacing={props.width === 'xs' || props.width === 'sm' ? 2 : 10}
+        >
+          {/* <Grid item md={1} xs={1} /> */}
+          <Grid item md={6} xs={6}>
             <div className="container-show-image">
               <div
                 style={{ display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none' }}
@@ -322,14 +197,14 @@ function CompareHomestaty(props) {
                   fontSize={props.width === 'xs' ? 14 : 26}
                   style={{ color: '#2B2B2B', fontWeight: 'bold' }}
                 >
-                  COZY⭐️HOMESTAY NGUYÊN CĂN
+                  CAMELLIA 2 by SONG CAT HOME
                 </Box>
                 <Box fontSize={props.width === 'xs' ? 12 : 20}>
                   <i>Đà Lạt, Lâm Đồng Việt Nam</i>
                 </Box>
               </div>
               {(props.width === 'xs' || props.width === 'sm') && (
-                <Swiper {...params1} style={{ width: '100%', height: '100%' }}>
+                <Swiper {...params} style={{ width: '100%', height: '100%' }}>
                   <div>
                     <img
                       src={imgs[Math.floor(Math.random() * 8)]}
@@ -386,126 +261,267 @@ function CompareHomestaty(props) {
               )}
               {props.width !== 'xs' && props.width !== 'sm' && (
                 <>
-                  <Swiper {...seGallerySwiperParams}>
-                    <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                  <Swiper {...gallerySwiperParams}>
+                    <div className="swiper-slide ">
+                      <img style={{ width: '100%', height: '100%' }} src={ss1} alt="img" />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                      <img style={{ width: '100%', height: '100%' }} src={ss2} alt="img" />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                      <img style={{ width: '100%', height: '100%' }} src={ss3} alt="img" />
                     </div>
                     <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                      <img style={{ width: '100%', height: '100%' }} src={ss4} alt="img" />
                     </div>
                     <div>
-                      <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
-                    </div>
-                    <div className="swiper-slide" />
-                    <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
-                    <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
-                    </div>
-                    <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
-                    </div>
-                    <div className="swiper-slide">
-                      <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
-                    </div>
-                    <div>
-                      <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                      <img style={{ width: '100%', height: '100%' }} src={ss5} alt="img" />
                     </div>
                   </Swiper>
                   <div className="container-thum">
-                    <Swiper {...seThumbnailSwiperParams}>
-                      <img className="slide-under swiper-slide" src={ss6} alt="img" />
+                    <Swiper {...thumbnailSwiperParams}>
+                      <img
+                        className="slide-under swiper-slide swiper-slide-active"
+                        src={ss1}
+                        alt="img"
+                      />
 
-                      <img className="slide-under swiper-slide" src={ss7} alt="img" />
+                      <img className="slide-under swiper-slide" src={ss2} alt="img" />
 
-                      <img className="slide-under swiper-slide" src={ss8} alt="img" />
+                      <img className="slide-under swiper-slide" src={ss3} alt="img" />
 
-                      <img className="slide-under swiper-slide" src={ss9} alt="img" />
+                      <img className="slide-under swiper-slide" src={ss4} alt="img" />
 
-                      <img className="slide-under swiper-slide" src={ss10} alt="img" />
-                      <img className="slide-under swiper-slide" src={ss6} alt="img" />
-
-                      <img className="slide-under swiper-slide" src={ss7} alt="img" />
-
-                      <img className="slide-under swiper-slide" src={ss8} alt="img" />
-
-                      <img className="slide-under swiper-slide" src={ss9} alt="img" />
-
-                      <img className="slide-under swiper-slide" src={ss10} alt="img" />
+                      <img className="slide-under swiper-slide" src={ss5} alt="img" />
                     </Swiper>
                   </div>
                 </>
               )}
-              <div
-                style={{ display: props.width !== 'xs' && props.width !== 'sm' ? 'block' : 'none' }}
-              >
-                <Box
-                  fontSize={props.width === 'xs' ? 14 : 26}
-                  style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-                >
-                  Ngọc nữ Homestay Đà Lạt - Siêu rẻ chất lượng cao
-                </Box>
-                <Box fontSize={props.width === 'xs' ? 12 : 20}>
-                  <i>Đà Lạt, Lâm Đồng Việt Nam</i>
-                </Box>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-                <button
-                  className="variant-button"
-                  type="button"
-                  onClick={() => navigate('/home-detail')}
-                  style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
-                >
-                  CHI TIẾT {'>>'}
-                </button>
-              </div>
             </div>
-          )}
-        </Grid>
-        {/* <Grid item md={1} xs={1} /> */}
-      </Grid>
-      <div className="content-compare">
-        <Grid container style={{ padding: '15px 0' }}>
-          <Grid item xs={5} md={4}>
-            <Box>
-              <Box display="inline">
-                <StarIcon style={{ color: '#9708CC', fontSize: '18px' }} />
-              </Box>
-              <Box display="inline">4.95</Box>
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 20}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+            <div
+              style={{ display: props.width !== 'xs' && props.width !== 'sm' ? 'block' : 'none' }}
             >
-              Đánh giá
-            </Box>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            <Box>
-              <Box display="inline">
-                <StarIcon
-                  style={{ color: '#9708CC', fontSize: props.width === 'xs' ? '14' : '18px' }}
-                />
+              <Box
+                fontSize={props.width === 'xs' ? 14 : 26}
+                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+              >
+                Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2
               </Box>
-              <Box display="inline">4.95</Box>
-            </Box>
+              <Box fontSize={props.width === 'xs' ? 12 : 20}>
+                <i>Đà Lạt, Lâm Đồng Việt Nam</i>
+              </Box>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+              <button
+                className="variant-button"
+                type="button"
+                style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
+                onClick={() => navigate('/home-detail')}
+              >
+                CHI TIẾT {'>>'}
+              </button>
+            </div>
           </Grid>
+          {/* <Grid item md={2} /> */}
+          <Grid item md={6} xs={6}>
+            {!close && (
+              <div className="container-show-image">
+                <div
+                  style={{
+                    display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none',
+                  }}
+                >
+                  <Box
+                    fontSize={props.width === 'xs' ? 14 : 26}
+                    style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+                  >
+                    COZY⭐️HOMESTAY NGUYÊN CĂN
+                  </Box>
+                  <Box fontSize={props.width === 'xs' ? 12 : 20}>
+                    <i>Đà Lạt, Lâm Đồng Việt Nam</i>
+                  </Box>
+                </div>
+                {(props.width === 'xs' || props.width === 'sm') && (
+                  <Swiper {...params1} style={{ width: '100%', height: '100%' }}>
+                    <div>
+                      <img
+                        src={imgs[Math.floor(Math.random() * 8)]}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          borderTopLeftRadius: '4px',
+                          borderTopRightRadius: '4px',
+                        }}
+                        alt="img"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={imgs[Math.floor(Math.random() * 8)]}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: '4px',
+                          borderTopRightRadius: '4px',
+                          objectFit: 'cover',
+                        }}
+                        alt="img"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={imgs[Math.floor(Math.random() * 8)]}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: '4px',
+                          borderTopRightRadius: '4px',
+                          objectFit: 'cover',
+                        }}
+                        alt="img"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={imgs[Math.floor(Math.random() * 8)]}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: '4px',
+                          borderTopRightRadius: '4px',
+                          objectFit: 'cover',
+                        }}
+                        alt="img"
+                      />
+                    </div>
+                  </Swiper>
+                )}
+                {props.width !== 'xs' && props.width !== 'sm' && (
+                  <>
+                    <Swiper {...seGallerySwiperParams}>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                      </div>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                      </div>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                      </div>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                      </div>
+                      <div>
+                        <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                      </div>
+                      <div className="swiper-slide" />
+                      <img style={{ width: '100%', height: '100%' }} src={ss6} alt="img" />
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss7} alt="img" />
+                      </div>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss8} alt="img" />
+                      </div>
+                      <div className="swiper-slide">
+                        <img style={{ width: '100%', height: '100%' }} src={ss9} alt="img" />
+                      </div>
+                      <div>
+                        <img style={{ width: '100%', height: '100%' }} src={ss10} alt="img" />
+                      </div>
+                    </Swiper>
+                    <div className="container-thum">
+                      <Swiper {...seThumbnailSwiperParams}>
+                        <img className="slide-under swiper-slide" src={ss6} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss7} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss8} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss9} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss10} alt="img" />
+                        <img className="slide-under swiper-slide" src={ss6} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss7} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss8} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss9} alt="img" />
+
+                        <img className="slide-under swiper-slide" src={ss10} alt="img" />
+                      </Swiper>
+                    </div>
+                  </>
+                )}
+                <div
+                  style={{
+                    display: props.width !== 'xs' && props.width !== 'sm' ? 'block' : 'none',
+                  }}
+                >
+                  <Box
+                    fontSize={props.width === 'xs' ? 14 : 26}
+                    style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+                  >
+                    Ngọc nữ Homestay Đà Lạt - Siêu rẻ chất lượng cao
+                  </Box>
+                  <Box fontSize={props.width === 'xs' ? 12 : 20}>
+                    <i>Đà Lạt, Lâm Đồng Việt Nam</i>
+                  </Box>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+                  <button
+                    className="variant-button"
+                    type="button"
+                    onClick={() => navigate('/home-detail')}
+                    style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
+                  >
+                    CHI TIẾT {'>>'}
+                  </button>
+                </div>
+              </div>
+            )}
+          </Grid>
+          {/* <Grid item md={1} xs={1} /> */}
         </Grid>
-        <Grid
-          container
-          style={{
-            backgroundColor: 'rgba(150, 150, 150, 0.05)',
-          }}
-        >
-          <Grid item xs={5} md={4}>
-            {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '15px' : '0px' }}>
+        <div className="content-compare">
+          <Grid container style={{ padding: '15px 0' }}>
+            <Grid item xs={5} md={4}>
+              <Box>
+                <Box display="inline">
+                  <StarIcon style={{ color: '#9708CC', fontSize: '18px' }} />
+                </Box>
+                <Box display="inline">4.95</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
+              <Box
+                fontSize={props.width === 'xs' ? 14 : 20}
+                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+              >
+                Đánh giá
+              </Box>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box>
+                <Box display="inline">
+                  <StarIcon
+                    style={{ color: '#9708CC', fontSize: props.width === 'xs' ? '14' : '18px' }}
+                  />
+                </Box>
+                <Box display="inline">4.95</Box>
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            style={{
+              backgroundColor: 'rgba(150, 150, 150, 0.05)',
+            }}
+          >
+            <Grid item xs={5} md={4}>
+              {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '15px' : '0px' }}>
               <Grid item md={4}>
                 <Grid container direction="column" justify="flex-start">
                   <Box>
@@ -527,32 +543,32 @@ function CompareHomestaty(props) {
                 </Grid>
               </Grid>
             </Grid> */}
-            <Grid>
-              <Box>Wifi miễn phí</Box>
-              <Box>Có sân vườn</Box>
-              <Box>Có chỗ đậu xe</Box>
+              <Grid>
+                <Box>Wifi miễn phí</Box>
+                <Box>Có sân vườn</Box>
+                <Box>Có chỗ đậu xe</Box>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-              style={{ height: '100%' }}
-            >
-              <Box
-                fontSize={props.width === 'xs' ? 14 : 20}
-                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-                marginLeft={1}
-                marginRight={1}
+            <Grid item xs={2} md={4}>
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+                style={{ height: '100%' }}
               >
-                Tiện nghi
-              </Box>
+                <Box
+                  fontSize={props.width === 'xs' ? 14 : 20}
+                  style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+                  marginLeft={1}
+                  marginRight={1}
+                >
+                  Tiện nghi
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '10px' : '0px' }}>
+            <Grid item xs={5} md={4}>
+              {/* <Grid container style={{ marginLeft: props.width === 'xs' ? '10px' : '0px' }}>
               <Grid item md={4}>
                 <Grid container direction="column" justify="flex-start">
                   <Box>
@@ -575,196 +591,197 @@ function CompareHomestaty(props) {
                 </Grid>
               </Grid>
             </Grid> */}
-            <Grid>
-              <Box>Wifi miễn phí</Box>
-              <Box>Có sân vườn</Box>
-              <Box>Có chỗ đậu xe</Box>
+              <Grid>
+                <Box>Wifi miễn phí</Box>
+                <Box>Có sân vườn</Box>
+                <Box>Có chỗ đậu xe</Box>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid container style={{ padding: '15px 0' }}>
-          <Grid item xs={5} md={4}>
-            <Box>
-              <Box>2,345,000 VNĐ/ngày</Box>
-            </Box>
+          <Grid container style={{ padding: '15px 0' }}>
+            <Grid item xs={5} md={4}>
+              <Box>
+                <Box>2,345,000 VNĐ/ngày</Box>
+              </Box>
+            </Grid>
+            <Grid item md={4} xs={2}>
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+                style={{ height: '100%' }}
+              >
+                <Box
+                  fontSize={props.width === 'xs' ? 14 : 20}
+                  style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+                >
+                  Giá
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item md={4} xs={5}>
+              <Box>
+                <Box>2,345,000 VNĐ/ngày</Box>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item md={4} xs={2}>
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-              style={{ height: '100%' }}
-            >
+          <Grid
+            container
+            style={{
+              backgroundColor: 'rgba(150, 150, 150, 0.05)',
+              padding: '15px 0',
+            }}
+          >
+            <Grid item xs={5} md={4}>
+              <Box>
+                <Box> 3 người</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
               <Box
                 fontSize={props.width === 'xs' ? 14 : 20}
                 style={{ color: '#2B2B2B', fontWeight: 'bold' }}
               >
-                Giá
+                Số khách
+              </Box>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box>
+                <Box>4 người</Box>
               </Box>
             </Grid>
           </Grid>
-          <Grid item md={4} xs={5}>
-            <Box>
-              <Box>2,345,000 VNĐ/ngày</Box>
-            </Box>
+          <Grid container style={{ padding: '15px 0' }}>
+            <Grid item xs={5} md={4}>
+              <Box marginRight={3}>
+                <Box>Nhà riêng</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
+              <Box
+                fontSize={props.width === 'xs' ? 14 : 20}
+                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+              >
+                Loại homestay
+              </Box>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box marginLeft={3}>
+                <Box>Khách sạn</Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid
-          container
-          style={{
-            backgroundColor: 'rgba(150, 150, 150, 0.05)',
-            padding: '15px 0',
-          }}
-        >
-          <Grid item xs={5} md={4}>
-            <Box>
-              <Box> 3 người</Box>
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 20}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-            >
-              Số khách
-            </Box>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            <Box>
-              <Box>4 người</Box>
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid container style={{ padding: '15px 0' }}>
-          <Grid item xs={5} md={4}>
-            <Box marginRight={3}>
-              <Box>Nhà riêng</Box>
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 20}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-            >
-              Loại homestay
-            </Box>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            <Box marginLeft={3}>
-              <Box>Khách sạn</Box>
-            </Box>
-          </Grid>
-        </Grid>
 
-        <Grid
-          container
-          style={{
-            backgroundColor: 'rgba(150, 150, 150, 0.05)',
-            padding: '15px 0',
-          }}
-        >
-          <Grid item xs={5} md={4}>
-            {' '}
-            <Box marginRight={3}>
-              <Box>2 km</Box>
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 20}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-            >
-              Khoảng cách từ bạn
-            </Box>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            <Box marginLeft={3}>
-              <Box> 3 km</Box>
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid container style={{ padding: '15px 0' }}>
-          <Grid item xs={5} md={4}>
-            <Box marginRight={3}>
-              <Box>Thung lũng tình yêu, Quảng trường, chợ đêm</Box>
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Box
-              fontSize={props.width === 'xs' ? 14 : 20}
-              style={{ color: '#2B2B2B', fontWeight: 'bold' }}
-            >
-              Gần với
-            </Box>
-          </Grid>
-          <Grid item xs={5} md={4}>
-            <Box marginLeft={3}>
-              <Box>Cáp treo, Sân bay, núi langbian, Thác Preen</Box>
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          style={{
-            backgroundColor: 'rgba(150, 150, 150, 0.05)',
-            padding: '15px 0',
-          }}
-        >
-          <Grid item xs={5} md={4}>
-            <Box marginRight={props.width === 'xs' ? 1 : 3}>
-              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homesta
-            </Box>
-          </Grid>
-          <Grid item xs={2} md={4}>
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-              style={{ height: '100%' }}
-            >
+          <Grid
+            container
+            style={{
+              backgroundColor: 'rgba(150, 150, 150, 0.05)',
+              padding: '15px 0',
+            }}
+          >
+            <Grid item xs={5} md={4}>
+              {' '}
+              <Box marginRight={3}>
+                <Box>2 km</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
               <Box
                 fontSize={props.width === 'xs' ? 14 : 20}
                 style={{ color: '#2B2B2B', fontWeight: 'bold' }}
               >
-                Quy định
+                Khoảng cách từ bạn
+              </Box>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box marginLeft={3}>
+                <Box> 3 km</Box>
               </Box>
             </Grid>
           </Grid>
-          <Grid item xs={5} md={4}>
-            <Box marginLeft={props.width === 'xs' ? 1 : 3}>
-              Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
-              Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
-            </Box>
+          <Grid container style={{ padding: '15px 0' }}>
+            <Grid item xs={5} md={4}>
+              <Box marginRight={3}>
+                <Box>Thung lũng tình yêu, Quảng trường, chợ đêm</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
+              <Box
+                fontSize={props.width === 'xs' ? 14 : 20}
+                style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+              >
+                Gần với
+              </Box>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box marginLeft={3}>
+                <Box>Cáp treo, Sân bay, núi langbian, Thác Preen</Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container style={{ margin: '20px 0' }}>
-          <Grid item xs={4}>
-            <button
-              className="variant-button datcho"
-              type="button"
-              onClick={() => navigate('/payment')}
-              style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
-            >
-              ĐẶT NGAY
-            </button>
+          <Grid
+            container
+            style={{
+              backgroundColor: 'rgba(150, 150, 150, 0.05)',
+              padding: '15px 0',
+            }}
+          >
+            <Grid item xs={5} md={4}>
+              <Box marginRight={props.width === 'xs' ? 1 : 3}>
+                Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
+                Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homesta
+              </Box>
+            </Grid>
+            <Grid item xs={2} md={4}>
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+                style={{ height: '100%' }}
+              >
+                <Box
+                  fontSize={props.width === 'xs' ? 14 : 20}
+                  style={{ color: '#2B2B2B', fontWeight: 'bold' }}
+                >
+                  Quy định
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item xs={5} md={4}>
+              <Box marginLeft={props.width === 'xs' ? 1 : 3}>
+                Không được hút thuốc lá, không lớn tiếng ồn ào khi qua 11 giờ đêm và sau 5 giờ sáng.
+                Phải trả tiền trước khi ở không được đem các chất cấm vào khu vực homestay
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={4} />
-          <Grid item xs={4}>
-            <button
-              className="variant-button datcho"
-              type="button"
-              style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
-              onClick={() => navigate('/payment')}
-            >
-              ĐẶT NGAY
-            </button>
+          <Grid container style={{ margin: '20px 0' }}>
+            <Grid item xs={4}>
+              <button
+                className="variant-button datcho"
+                type="button"
+                onClick={() => navigate('/payment')}
+                style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
+              >
+                ĐẶT NGAY
+              </button>
+            </Grid>
+            <Grid item xs={4} />
+            <Grid item xs={4}>
+              <button
+                className="variant-button datcho"
+                type="button"
+                style={{ fontSize: props.width === 'xs' ? '12px' : '18px' }}
+                onClick={() => navigate('/payment')}
+              >
+                ĐẶT NGAY
+              </button>
+            </Grid>
           </Grid>
-        </Grid>
-      </div>
-    </Container>
+        </div>
+      </Container>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { FETCH, FETCH_SUCCESS, FETCH_ERROR, CLEAR } from './constants';
+import { FETCH, FETCH_SUCCESS, FETCH_ERROR, CLEAR, STATUS_COMPARE } from './constants';
 
 export const fetchAction = name => ({
   type: FETCH,
@@ -22,4 +22,9 @@ export const clearAction = () => ({
 export const close = value => ({
   type: CLEAR,
   payload: value,
+});
+
+export const compareAction = status => ({
+  type: STATUS_COMPARE,
+  payload: status,
 });

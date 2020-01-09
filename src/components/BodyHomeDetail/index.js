@@ -73,7 +73,7 @@ function BodyHomedetail() {
             label="H"
           /> */}
           <Box onClick={handleChange} fontWeight={500} fontSize={20} className="compare-now">
-            Homestay nào phù hợp với bạn? <b>Tìm hiểu thêm</b>
+            Homestay nào phù hợp với bạn? <b style={{ color: '#9708cc' }}>Tìm hiểu thêm</b>
           </Box>
           <div style={{ display: checked ? 'block' : 'none' }}>
             <Grid container>

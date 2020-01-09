@@ -1,4 +1,4 @@
-import { FETCH_SUCCESS, FETCH_ERROR, CLEAR, CLOSE } from './constants';
+import { FETCH_SUCCESS, FETCH_ERROR, CLEAR, CLOSE, STATUS_COMPARE } from './constants';
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -9,6 +9,9 @@ const reducer = (state = {}, action) => {
     case CLEAR:
       return {};
     case CLOSE:
+      return action.payload;
+    case STATUS_COMPARE:
+      console.log('check', action.payload);
       return action.payload;
     default:
       return state;
