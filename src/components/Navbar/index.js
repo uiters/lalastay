@@ -119,7 +119,11 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
   const parts = parse(suggestion.label, matches);
 
   return (
-    <MenuItem selected={isHighlighted} component="div" onClick={() => navigate('/home-by-area')}>
+    <MenuItem
+      selected={isHighlighted}
+      component="div"
+      onClick={() => navigate('/home-by-area-search')}
+    >
       <div>
         <RoomIcon style={{ color: '#FC6C85', fontSize: '18px', marginRight: '10px' }} />
         {parts.map(part => (

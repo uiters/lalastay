@@ -187,8 +187,8 @@ function CompareHomestaty(props) {
           alignItems="center"
           spacing={props.width === 'xs' || props.width === 'sm' ? 2 : 10}
         >
-          {/* <Grid item md={1} xs={1} /> */}
-          <Grid item md={6} xs={6}>
+          <Grid item md={1} xs={12} />
+          <Grid item md={5} xs={6}>
             <div className="container-show-image">
               <div
                 style={{ display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none' }}
@@ -321,7 +321,7 @@ function CompareHomestaty(props) {
                 fontSize={props.width === 'xs' ? 14 : 26}
                 style={{ color: '#2B2B2B', fontWeight: 'bold' }}
               >
-                Tuấn Vũ Homestay Đà Lạt - Double Doraemon Room 2
+                DANA COZY⭐️HOMESTAY NGUYÊN CĂN GIÁ RẺ
               </Box>
               <Box fontSize={props.width === 'xs' ? 12 : 20}>
                 <i>Đà Lạt, Lâm Đồng Việt Nam</i>
@@ -340,7 +340,7 @@ function CompareHomestaty(props) {
             </div>
           </Grid>
           {/* <Grid item md={2} /> */}
-          <Grid item md={6} xs={6}>
+          <Grid item md={5} xs={6}>
             {!close && (
               <div className="container-show-image">
                 <div
@@ -516,7 +516,7 @@ function CompareHomestaty(props) {
                     fontSize={props.width === 'xs' ? 14 : 26}
                     style={{ color: '#2B2B2B', fontWeight: 'bold' }}
                   >
-                    Ngọc nữ Homestay Đà Lạt - Siêu rẻ chất lượng cao
+                    S. CAMELLIA 2 _ Managed by SONG CAT HOME
                   </Box>
                   <Box fontSize={props.width === 'xs' ? 12 : 20}>
                     <i>Đà Lạt, Lâm Đồng Việt Nam</i>
@@ -535,7 +535,7 @@ function CompareHomestaty(props) {
               </div>
             )}
           </Grid>
-          {/* <Grid item md={1} xs={1} /> */}
+          <Grid item md={1} xs={12} />
         </Grid>
         <div className="content-compare">
           <Grid container style={{ padding: '15px 0' }}>
@@ -573,11 +573,36 @@ function CompareHomestaty(props) {
             }}
           >
             <Grid item xs={5} md={4}>
-              <Grid>
-                <Box>Wifi miễn phí</Box>
-                <Box>Có sân vườn</Box>
-                <Box>Có chỗ đậu xe</Box>
-              </Grid>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid
+                  style={{
+                    display:
+                      props.width === 'xs' || props.width === 'sm' || props.width === 'md'
+                        ? 'none'
+                        : 'block',
+                    marginRight: '10px',
+                  }}
+                >
+                  <Box>
+                    <WifiIcon style={{ color: 'rgba(151, 8, 204, 0.8)' }} />
+                  </Box>
+                  <Box>
+                    <HomeIcon style={{ color: 'rgba(151, 8, 204, 0.8)' }} />
+                  </Box>
+                  <Box>
+                    <img
+                      src={parking}
+                      alt="img"
+                      style={{ color: 'rgba(151, 8, 204, 0.8)', marginBottom: '30px' }}
+                    />
+                  </Box>
+                </Grid>
+                <Grid>
+                  <Box>Wifi miễn phí</Box>
+                  <Box> Có sân vườn</Box>
+                  <Box> Có chỗ đậu xe</Box>
+                </Grid>
+              </div>
             </Grid>
             <Grid item xs={2} md={4}>
               <Grid
@@ -598,11 +623,36 @@ function CompareHomestaty(props) {
               </Grid>
             </Grid>
             <Grid item xs={5} md={4}>
-              <Grid>
-                <Box>Wifi miễn phí</Box>
-                <Box>Có sân vườn</Box>
-                <Box>Có chỗ đậu xe</Box>
-              </Grid>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid
+                  style={{
+                    display:
+                      props.width === 'xs' || props.width === 'sm' || props.width === 'md'
+                        ? 'none'
+                        : 'block',
+                    marginRight: '10px',
+                  }}
+                >
+                  <Box>
+                    <WifiIcon style={{ color: 'rgba(151, 8, 204, 0.8)' }} />
+                  </Box>
+                  <Box>
+                    <HomeIcon style={{ color: 'rgba(151, 8, 204, 0.8)' }} />
+                  </Box>
+                  <Box>
+                    <img
+                      src={parking}
+                      alt="img"
+                      style={{ color: 'rgba(151, 8, 204, 0.8)', marginBottom: '30px' }}
+                    />
+                  </Box>
+                </Grid>
+                <Grid>
+                  <Box>Wifi miễn phí</Box>
+                  <Box> Có sân vườn</Box>
+                  <Box> Có chỗ đậu xe</Box>
+                </Grid>
+              </div>
             </Grid>
           </Grid>
           <Grid container style={{ padding: '15px 0' }}>
@@ -680,7 +730,7 @@ function CompareHomestaty(props) {
             </Grid>
           </Grid>
 
-          <Grid
+          {/* <Grid
             container
             style={{
               backgroundColor: 'rgba(150, 150, 150, 0.05)',
@@ -706,8 +756,8 @@ function CompareHomestaty(props) {
                 <Box> 3 km</Box>
               </Box>
             </Grid>
-          </Grid>
-          <Grid container style={{ padding: '15px 0' }}>
+          </Grid> */}
+          {/* <Grid container style={{ padding: '15px 0' }}>
             <Grid item xs={5} md={4}>
               <Box marginRight={3}>
                 <Box>Thung lũng tình yêu, Quảng trường, chợ đêm</Box>
@@ -726,7 +776,7 @@ function CompareHomestaty(props) {
                 <Box>Cáp treo, Sân bay, núi langbian, Thác Preen</Box>
               </Box>
             </Grid>
-          </Grid>
+          </Grid> */}
           <Grid
             container
             style={{

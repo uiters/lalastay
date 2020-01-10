@@ -54,7 +54,6 @@ function CommentReview(props) {
                 alignItems: 'center',
               }}
             >
-              {console.log('klaka', props.width)}
               <div>
                 <h6
                   style={{

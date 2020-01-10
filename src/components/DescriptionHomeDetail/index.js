@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { Grid, Box } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,6 +13,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
+import withWidth from '@material-ui/core/withWidth';
 // import GavelIcon from '@material-ui/icons/Gavel';
 import HomeIcon from '@material-ui/icons/Home';
 import parking from '../../assets/parking.png';
@@ -55,7 +58,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#fff',
   },
 }));
-function DescriptionHomeDetail() {
+function DescriptionHomeDetail(props) {
   const classes = useStyles();
 
   const [value, setValue] = useState(0);
@@ -105,6 +108,69 @@ function DescriptionHomeDetail() {
             <Box fontWeight={300} fontSize={16} lineHeight={1.5} marginBottom={2}>
               Chúng tôi có chỗ đậu xe ô tô rộng rãi cho quý khách đi tham quan du lịch theo hội,
               nhóm, theo đoàn hay gia đình,...
+            </Box>
+            <Box
+              style={{
+                display:
+                  props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                    ? 'block'
+                    : 'none',
+              }}
+              fontWeight={300}
+              fontSize={16}
+              lineHeight={1.5}
+              marginBottom={2}
+            >
+              Phòng ở tại Mia Mia thì vô cùng sạch sẽ, thoáng mát, có nhà vệ sinh riêng. View xung
+              quanh rất thoáng, đa số là Villa và những ngôi nhà lồng bao phủ, 1 trong những nét rất
+              đặc trưng của Đà Lạt.
+            </Box>
+            <Box
+              style={{
+                display:
+                  props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                    ? 'block'
+                    : 'none',
+              }}
+              fontWeight={300}
+              fontSize={16}
+              lineHeight={1.5}
+              marginBottom={2}
+            >
+              Mia Mia toạ lạc tại Bùi Thị Xuân, phường 8, tp Đà Lạt. Quãng đường bạn cần di chuyển
+              rất gần để đến trung tâm tthành phố sương mù sầm uất Đà Lạt mộng mơ chỉ mất từ 8 - 13
+              phút.
+            </Box>
+            <Box
+              style={{
+                display:
+                  props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                    ? 'block'
+                    : 'none',
+              }}
+              fontWeight={300}
+              fontSize={16}
+              lineHeight={1.5}
+              marginBottom={2}
+            >
+              Chúng tôi có chỗ đậu xe ô tô rộng rãi cho quý khách đi tham quan du lịch theo hội,
+              nhóm, theo đoàn hay gia đình,...
+            </Box>
+            <Box
+              style={{
+                display:
+                  props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                    ? 'block'
+                    : 'none',
+              }}
+              fontWeight={300}
+              fontSize={16}
+              lineHeight={1.5}
+              marginBottom={2}
+            >
+              Mia Mia toạ lạc tại Bùi Thị Xuân, phường 8, tp Đà Lạt. Quãng đường bạn cần di chuyển
+              rất gần để đến trung tâm tthành phố sương mù sầm uất Đà Lạt mộng mơ chỉ mất từ 8 - 13
+              phút.
             </Box>
           </div>
         </TabPanel>
@@ -274,4 +340,4 @@ function DescriptionHomeDetail() {
   );
 }
 
-export default DescriptionHomeDetail;
+export default withWidth()(DescriptionHomeDetail);

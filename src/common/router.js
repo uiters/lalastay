@@ -11,6 +11,7 @@ import {
   CompareHomestaty,
   Payment,
   Invoice,
+  HomeByAreaSearch,
 } from 'routes';
 
 function RouterConfig() {
@@ -22,6 +23,7 @@ function RouterConfig() {
       <RepoDetail path="repo/:name" />
       <Homedetail path="home-detail" />
       <HomeByArea path="home-by-area" />
+      <HomeByAreaSearch path="home-by-area-search" />
       <CompareHomestaty path="compare-homestay" />
       <Payment path="payment" />
       <Invoice path="invoice" />

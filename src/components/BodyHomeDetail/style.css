@@ -68,6 +68,9 @@ td:nth-child(1) {
   background-size: 100%;
 }
 
+.animation-form{
+  /* transition: all 2s linear 5s; */
+}
 .button-compare {
   border: none !important;
   background-color: #fc6c85;

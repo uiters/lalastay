@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
@@ -9,17 +10,33 @@ import SmallRoomItem from '../SmallRoomItem';
 import { ReservationForm, DescriptionHomeDetail, InformationUserForm } from '../index';
 import './style.css';
 
-function BodyHomedetail() {
-  const [checked, setChecked] = React.useState(false);
+const useEventListener = (target, type, listener, ...options) => {
+  React.useEffect(() => {
+    const targetIsRef = target.hasOwnProperty('current');
+    const currentTarget = targetIsRef ? target.current : target;
+    if (currentTarget) currentTarget.addEventListener(type, listener, ...options);
+    return () => {
+      if (currentTarget) currentTarget.removeEventListener(type, listener, ...options);
+    };
+  }, [target, type, listener, options]);
+};
 
+function BodyHomedetail(props) {
+  const [checked, setChecked] = React.useState(false);
+  const [fix, setFix] = React.useState(false);
+  useEventListener(document, 'scroll', () => {
+    const temp = window.pageYOffset >= 400 && window.pageYOffset <= 730;
+    setFix(temp);
+  });
   const handleChange = () => {
     setChecked(prev => !prev);
   };
 
+  // const handleScroll = () => {};
   return (
     <div>
       <Grid container spacing={2}>
-        <Grid item md={8} sm={8} xs={12}>
+        <Grid item md={8} sm={7} xs={12}>
           <div style={{ marginBottom: '15px' }}>
             <Grid container>
               <Grid item md={7} xs={12}>
@@ -60,11 +77,35 @@ function BodyHomedetail() {
 
           <DescriptionHomeDetail />
         </Grid>
-        <Grid item md={4} sm={4} xs={12}>
-          <ReservationForm />
-          <div style={{ height: '50px' }} />
-          <InformationUserForm />
+        <Grid item md={4} sm={5} xs={12}>
+          <div
+            style={{
+              position:
+                fix && props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                  ? 'relative'
+                  : 'static',
+            }}
+          >
+            <div
+              className="animation-form"
+              style={{
+                position:
+                  fix && props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
+                    ? 'fixed'
+                    : 'static',
+                width: props.width === 'xs' ? '310px' : props.width === 'sm' ? '340px' : '350px',
+                top: 60,
+              }}
+            >
+              <ReservationForm />
+              <div style={{ height: '50px' }} />
+              <InformationUserForm />
+            </div>
+          </div>
         </Grid>
+        {/* <Grid item md={8} sm={8} xs={12}>
+
+        </Grid> */}
       </Grid>
       <div className="compare">
         <div>
