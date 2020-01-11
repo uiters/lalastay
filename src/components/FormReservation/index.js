@@ -10,7 +10,7 @@ function InformationUserForm() {
     <div style={{ position: 'relative', width: '100%' }}>
       <div className="conatiner-reservation">
         <div style={{ textAlign: 'center' }}>
-          <Box fontSize={25} fontWeight={600}>
+          <Box fontSize={20} fontWeight={600}>
             Đặt Phòng
           </Box>
         </div>
@@ -22,7 +22,7 @@ function InformationUserForm() {
                 <DateRangeIcon
                   style={{
                     position: 'absolute',
-                    right: 0,
+                    right: 10,
                     top: 8,
                     color: ' rgba(150, 150, 150, 0.8)',
                   }}
@@ -36,7 +36,7 @@ function InformationUserForm() {
                 <DateRangeIcon
                   style={{
                     position: 'absolute',
-                    right: 0,
+                    right: 10,
                     top: 8,
                     color: ' rgba(150, 150, 150, 0.8)',
                   }}
