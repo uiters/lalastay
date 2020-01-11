@@ -93,6 +93,10 @@ td:nth-child(1) {
   } */
 }
 
+.compare-now {
+  margin-bottom: 15px;
+}
+
 .compare-now :hover {
   cursor: pointer;
 }

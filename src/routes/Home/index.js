@@ -1,35 +1,29 @@
 /* eslint-disable react/jsx-boolean-value */
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { CityViewer, RoomViewer, withLayout, Footer } from 'components';
 import { Container } from '@material-ui/core';
+import showcaseImage from 'assets/vietnam.png';
 import './style.css';
 
 function Home() {
+  const matches = useMediaQuery('(min-width:768px)');
   return (
-    <div style={{ position: 'relative' }}>
-      <div
-        className="video"
-        style={{
-          position: 'relative',
-          paddingBottom: '42.857142857%' /* 21:9 */,
-          height: '0px',
-          overflow: 'hidden',
-          marginBottom: '40px',
-        }}
-      >
-        <iframe
-          title="video"
-          style={{
-            position: 'absolute',
-            left: 0,
-            width: '100%',
-            height: '100%',
-          }}
-          src="https://www.youtube.com/embed/NU5ff6vRktI?rel=0&amp;controls=0&amp;autoplay=1&amp;loop=1000&amp;mute=1&amp;showinfo=0&amp;start=12&amp;"
-          frameBorder={0}
-          allow="autoplay; encrypted-media "
-        />
-      </div>
+    <div>
+      {matches && (
+        <div style={{ overflow: 'hidden', width: '100%' }}>
+          <div className="background-overlay" />
+          <img className="showcase-image" alt="vietnam" src={showcaseImage} />
+          <div className="showcase-button-container">
+            <p style={{ color: '#fff', fontSize: '20px' }}>Hà Giang - Mùa hoa tam giác mạch</p>
+            <div className="showcase-button">
+              <div>Khám phá ngay</div>
+              <ChevronRightIcon />
+            </div>
+          </div>
+        </div>
+      )}
       <div className="img-introduce">
         <div className="title-introduce">
           <div>Đồng Nai đang chờ bạn khám phá, còn chờ đợi gì nữa?</div>
@@ -40,7 +34,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <Container>
+      <Container style={{ marginTop: '40px' }}>
         <CityViewer
           tilte="Địa điểm nổi bật hôm nay"
           sologen="Đây là những địa điểm nổi bật nhất Lalastay"

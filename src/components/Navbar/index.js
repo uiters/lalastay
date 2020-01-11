@@ -74,7 +74,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const suggestions = [
-  { label: 'Đà lạt' },
+  { label: 'Đà Lạt' },
   { label: 'TP HCM' },
   { label: 'Vũng Tàu' },
   { label: 'Đồng nai' },
@@ -240,7 +240,7 @@ function Navbar(props) {
                   inputProps={{
                     classes,
                     id: 'react-autosuggest-popper',
-                    placeholder: 'Đà lạt',
+                    placeholder: 'Đà Lạt',
                     value: state.popper,
                     onChange: handleChange('popper'),
                     inputRef: node => {
@@ -332,7 +332,7 @@ function Navbar(props) {
                 inputProps={{
                   classes,
                   id: 'react-autosuggest-popper',
-                  placeholder: 'Đà lạt',
+                  placeholder: 'Đà Lạt',
                   value: stateMin.popper,
                   onChange: handleChangeMin('popper'),
                   inputRef: node => {

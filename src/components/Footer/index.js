@@ -17,40 +17,48 @@ function Footer() {
         <Grid md={6} xs={12} className="container-left">
           <div className="text-footer  ">
             <div className="contact-item">
-              <HomeIcon className="icon-style " />
+              <HomeIcon className="icon-style small-icon" />
               <p>Khu Phố 6- Phường linh trung Quận Thủ Đức-TPHCM </p>
             </div>
             <div className="contact-item">
-              <PhoneIcon type="phone" theme="twoTone" className="icon-style " />{' '}
+              <PhoneIcon type="phone" theme="twoTone" className="icon-style small-icon" />{' '}
               <span>0981853640</span>{' '}
             </div>
             <div className="contact-item">
-              <EmailIcon type="mail" theme="twoTone" className="icon-style " />
-              <span>237zjh@gmail.com</span>{' '}
+              <EmailIcon type="mail" theme="twoTone" className="icon-style small-icon" />
+              <span>info@lalastay.com</span>{' '}
             </div>
           </div>
         </Grid>
         <Grid md={6} xs={12} className="container-right">
           <div className="text-footer">
-            <h3 style={{ color: '#ffffff', fontWeight: '600' }}>About Group</h3>
+            <h3 style={{ color: 'rgba(0, 0, 0, 0.65)', fontWeight: '600' }}>Về chúng tôi</h3>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s,x f
+              lalastay là một phần của Lala Holdings Inc., tập đoàn đứng đầu thế giới về du lịch
+              trực tuyến và các dịch vụ liên quan.
             </p>
           </div>
         </Grid>
         <Grid md={12} container>
           <div className="container-end-footer">
             <div className="end-footer">
-              <FacebookIcon className="icon-contact" />
-              <YouTubeIcon className="icon-contact" />
-              <TwitterIcon className="icon-contact" />
-              <InstagramIcon className="icon-contact" />
+              <a href="https://github.com/uiters/lalastay">
+                <FacebookIcon className="icon-contact" />
+              </a>
+              <a href="https://github.com/uiters/lalastay">
+                <YouTubeIcon className="icon-contact" />
+              </a>
+              <a href="https://github.com/uiters/lalastay">
+                <TwitterIcon className="icon-contact" />
+              </a>
+              <a href="https://github.com/uiters/lalastay">
+                <InstagramIcon className="icon-contact" />
+              </a>
             </div>
-            <div className="text-end">
-              <p className="margin-bottom-0">Thank you! I like it and you?</p>
-              <p>&copy; Lalastay</p>
-            </div>
+            <p className="license-text">
+              © 2019 Lalastay. Bản quyền thuộc về Công ty TNHH Lalatay Việt Nam. Mọi hành vi sao
+              chép đều là phạm pháp nếu không có sự cho phép bằng văn bản của chúng tôi.
+            </p>
           </div>
         </Grid>
       </Grid>

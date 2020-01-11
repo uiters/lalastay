@@ -27,7 +27,7 @@ const Payment = () => {
     <>
       <Breadcrumb />
       <div className="invoice-container" style={{ padding: matches ? '48px 96px' : '16px' }}>
-        <p className="invoice-big-title">Hóa đơn đặt phòng</p>
+        {/* <p className="invoice-big-title">Hóa đơn đặt phòng</p> */}
         <div className="invoice-left-section">
           <div className="invoice-avatar-section">
             <div>
