@@ -29,3 +29,9 @@
     height: 270px !important;
   }
 }
+
+@media (min-width: 766px) {
+  .container-city-item {
+    height: 300px !important;
+  }
+}

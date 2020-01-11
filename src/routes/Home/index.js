@@ -3,6 +3,7 @@ import React from 'react';
 import { CityViewer, RoomViewer, withLayout, Footer } from 'components';
 import { Container } from '@material-ui/core';
 import './style.css';
+import { navigate } from '@reach/router';
 
 function Home() {
   return (
@@ -32,9 +33,16 @@ function Home() {
       </div>
       <div className="img-introduce">
         <div className="title-introduce">
-          <div>Đồng Nai đang chờ bạn khám phá, còn chờ đợi gì nữa?</div>
+          <div>Đà Lạt đang chờ bạn khám phá, còn chờ đợi gì nữa?</div>
           <div className="button-xemngay">
-            <button type="button" className="variant-button">
+            <button
+              type="button"
+              className="variant-button"
+              onClick={() => {
+                console.log('akaka');
+                navigate('/home-by-area');
+              }}
+            >
               XEM NGAY {'>'}
             </button>
           </div>
