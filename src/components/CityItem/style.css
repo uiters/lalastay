@@ -12,8 +12,20 @@
   cursor: pointer;
 }
 
-/* @media (max-width: 375px) {
+@media (min-width: 375px) {
   .container-city-item {
-    height: 280px !important;
+    height: 270px !important;
   }
-} */
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .container-city-item {
+    height: 260px !important;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 767px) {
+  .container-city-item {
+    height: 270px !important;
+  }
+}

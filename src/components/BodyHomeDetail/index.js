@@ -26,7 +26,7 @@ function BodyHomedetail(props) {
   const [checked, setChecked] = React.useState(true);
   const [fix, setFix] = React.useState(false);
   useEventListener(document, 'scroll', () => {
-    const temp = window.pageYOffset >= 400 && window.pageYOffset <= 730;
+    const temp = window.pageYOffset >= 400 && window.pageYOffset <= 700;
     setFix(temp);
   });
   const handleChange = () => {
@@ -94,8 +94,11 @@ function BodyHomedetail(props) {
                   fix && props.width !== 'xs' && props.width !== 'sm' && props.width !== 'md'
                     ? 'fixed'
                     : 'static',
-                width: props.width === 'xs' ? '310px' : props.width === 'sm' ? '340px' : '350px',
+                width: props.width !== 'xs' && props.width !== 'sm' ? '340px' : '100%',
                 top: 60,
+                display: props.width === 'xs' || props.width === 'sm' ? 'flex' : 'block',
+                flexDirection: 'column',
+                alignItems: 'center',
               }}
             >
               <ReservationForm />

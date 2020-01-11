@@ -147,16 +147,28 @@ function CompareHomestaty(props) {
 
   return (
     <>
-      <div style={{ display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none' }}>
+      <div
+        style={{
+          display: props.width === 'xs' || props.width === 'sm' ? 'block' : 'none',
+          position: 'relative',
+          width: '100%',
+          marginBottom: '35px',
+        }}
+      >
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             padding: '10px 10px',
-            border: '0.5px solid rgba(150, 150, 150, 0.6)',
+            borderBottom: '0.5px solid rgba(150, 150, 150, 0.6)',
             color: '#2B2B2B',
             fontSize: '17px',
-            marginBottom: '20px',
+
+            position: 'fixed',
+            zIndex: 1000,
+            top: 0,
+            backgroundColor: '#ffffff',
+            width: '100%',
           }}
         >
           <div>So sánh homestay</div>
