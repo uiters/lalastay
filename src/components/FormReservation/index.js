@@ -7,7 +7,7 @@ import './style.css';
 
 function InformationUserForm() {
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', width: '100%' }}>
       <div className="conatiner-reservation">
         <div style={{ textAlign: 'center' }}>
           <Box fontSize={25} fontWeight={600}>
