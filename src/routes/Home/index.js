@@ -1,24 +1,29 @@
 /* eslint-disable react/jsx-boolean-value */
-import React from 'react';
+import React, { useRef } from 'react';
+import _ from 'lodash';
+import { navigate } from '@reach/router';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { CityViewer, RoomViewer, withLayout, Footer } from 'components';
 import { Container } from '@material-ui/core';
 import showcaseImage from 'assets/vietnam.png';
 import './style.css';
-import { navigate } from '@reach/router';
 
 function Home() {
   const matches = useMediaQuery('(min-width:768px)');
+  const ref = useRef();
   return (
     <div>
       {matches && (
         <div style={{ overflow: 'hidden', width: '100%' }}>
-          <div className="background-overlay" />
-          <img className="showcase-image" alt="vietnam" src={showcaseImage} />
+          <div
+            style={{ height: _.get(ref, 'current.height') || 0 }}
+            className="background-overlay"
+          />
+          <img ref={ref} className="showcase-image" alt="vietnam" src={showcaseImage} />
           <div className="showcase-button-container">
-            <p style={{ color: '#fff', fontSize: '20px' }}>Hà Giang - Mùa hoa tam giác mạch</p>
-            <div className="showcase-button">
+            <p style={{ color: '#fff', fontSize: '20px' }}>Sắc xuân Đà Lạt</p>
+            <div className="showcase-button" onClick={() => navigate('/home-by-area')}>
               <div>Khám phá ngay</div>
               <ChevronRightIcon />
             </div>
