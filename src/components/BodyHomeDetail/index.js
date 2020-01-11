@@ -22,14 +22,15 @@ const useEventListener = (target, type, listener, ...options) => {
 };
 
 function BodyHomedetail(props) {
-  const [checked, setChecked] = React.useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [checked, setChecked] = React.useState(true);
   const [fix, setFix] = React.useState(false);
   useEventListener(document, 'scroll', () => {
     const temp = window.pageYOffset >= 400 && window.pageYOffset <= 700;
     setFix(temp);
   });
   const handleChange = () => {
-    setChecked(prev => !prev);
+    // setChecked(prev => !prev);
   };
 
   // const handleScroll = () => {};
@@ -117,7 +118,7 @@ function BodyHomedetail(props) {
             label="H"
           /> */}
           <Box onClick={handleChange} fontWeight={500} fontSize={20} className="compare-now">
-            Homestay nào phù hợp với bạn? <b style={{ color: '#FC6C85' }}>Tìm hiểu thêm</b>
+            Homestay nào phù hợp với bạn?
           </Box>
           <div style={{ display: checked ? 'block' : 'none' }}>
             <Grid container>

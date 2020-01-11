@@ -1,3 +1,61 @@
+.showcase-image {
+  position: relative;
+  box-sizing: inherit;
+  /* background-size: cover; */
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.background-overlay {
+  z-index: 998;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(43, 43, 43, 0.15) 60.5%, rgba(43, 43, 43, 0.1) 75.25%);
+}
+
+.showcase-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+  width: 500px;
+  height: 90px;
+  left: 50%;
+  margin-left: -250px;
+  top: 200px;
+}
+
+.showcase-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  /* top: 50%;
+  width: 180px;
+  height: 45px;
+  left: 50%;
+  margin-left: -90px; */
+  width: 180px;
+  height: 45px;
+  cursor: pointer;
+  /* padding: 20px auto; */
+  background: #fc6c85;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 3px;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
 @media (min-width: 376px) and (max-width: 767px) {
   .video {
     display: none !important;

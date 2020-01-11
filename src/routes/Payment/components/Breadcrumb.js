@@ -1,22 +1,19 @@
 import React from 'react';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from '@reach/router';
+import logo from 'assets/logo.png';
 
 const Breadcrumb = () => {
   return (
     <div style={styles.container}>
-      <img
-        alt="logo"
-        height="38"
-        width="38"
-        style={styles.logo}
-        src="https://images.unsplash.com/photo-1503431128871-cd250803fa41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      />
+      <Link to="/">
+        <img alt="logo" height="38" width="38" style={styles.logo} src={logo} />
+      </Link>
       <Link to="/" style={styles.rootLink}>
         1. Thông tin đặt phòng
       </Link>
-      <ChevronRightIcon />
-      <p style={styles.childLink}>2. Hóa đơn đặt phòng</p>
+      {/* <ChevronRightIcon /> */}
+      {/* <p style={styles.childLink}>2. Hóa đơn đặt phòng</p> */}
     </div>
   );
 };
@@ -35,13 +32,14 @@ const styles = {
     borderRadius: '4px',
   },
   logo: {
+    cusor: 'pointer',
     left: '1.32%',
     right: '95.35%',
     top: '10.42%',
     bottom: '10.42%',
     marginLeft: '10px',
     color: '#000',
-    borderRadius: '4px',
+    borderRadius: '40px',
   },
   rootLink: {
     fontSize: '18px',

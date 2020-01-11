@@ -38,11 +38,16 @@ const Payment = () => {
       <Grid
         container
         spacing={0}
-        style={{ padding: matches ? '48px 96px' : '16px', position: 'relative' }}
+        style={{
+          padding: matches ? '48px 96px' : '16px',
+          position: 'relative',
+          paddingBottom: '0px',
+          marginBottom: '0px',
+        }}
       >
         <Grid item xs={12} sm={6} md={6}>
-          <p className="payment-top-title">Thông tin đặt phòng</p>
-          <p className="payment-sub-title1">4 ngày tại Xinh Homestay</p>
+          {/* <p className="payment-top-title">Thông tin đặt phòng</p> */}
+          <p className="payment-sub-title1">4 ngày tại “Xinh Homestay”</p>
           <div className="payment-checkin-checkout">
             <div className="payment-checkin" style={{ marginRight: '10px' }}>
               <p className="payment-checkin-line" />

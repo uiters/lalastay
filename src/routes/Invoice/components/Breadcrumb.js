@@ -1,18 +1,15 @@
 import React from 'react';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from '@reach/router';
+import logo from 'assets/logo.png';
 
 const Breadcrumb = () => {
   return (
     <div style={styles.container}>
-      <img
-        alt="logo"
-        height="38"
-        width="38"
-        style={styles.logo}
-        src="https://images.unsplash.com/photo-1503431128871-cd250803fa41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      />
-      <Link to="/" style={styles.rootLink}>
+      <Link to="/">
+        <img alt="logo" height="38" width="38" style={styles.logo} src={logo} />
+      </Link>
+      <Link to="/payment" style={styles.rootLink}>
         1. Thông tin đặt phòng
       </Link>
       <ChevronRightIcon />
@@ -46,8 +43,7 @@ const styles = {
   rootLink: {
     fontSize: '18px',
     lineHeight: '24px',
-    color: '#000',
-    fontWeight: 'bold',
+    color: '#969696',
     marginLeft: '48px',
   },
   childLink: {
